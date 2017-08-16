@@ -9,7 +9,7 @@ import com.google.api.client.util.Key;
 public class JsonFormFieldLabel extends JsonFormField {
 
     @Key
-    public String text = REQUIRED;
+    public String text;
 
     public JsonFormFieldLabel(String key, String type, String text) {
         super(key, type);

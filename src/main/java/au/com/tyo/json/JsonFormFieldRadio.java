@@ -16,7 +16,7 @@ public class JsonFormFieldRadio extends JsonFormFieldOptions {
     }
 
     public void check(String check, String alt) {
-        if (null != options)
+        if (null != check && null != options)
             for (JsonFormFieldOption option : options) {
                 if (check.equals(option.text)) {
                     value = option.key;

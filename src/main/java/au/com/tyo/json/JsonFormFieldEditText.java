@@ -9,7 +9,7 @@ import com.google.api.client.util.Key;
 public class JsonFormFieldEditText extends JsonFormFieldWithTitleAndHint {
 
     @Key
-    public String text;
+    public String value;
 
     public JsonFormFieldEditText(String key, String type, String title, String hint) {
         super(key, type, title, hint);
