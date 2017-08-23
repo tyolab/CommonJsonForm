@@ -10,4 +10,14 @@ public class JsonFormFieldValidator {
     @Key public String name;
     @Key public String value;
     @Key public String err;
+
+    public JsonFormFieldValidator(String name, String value, String err) {
+        this.name = name;
+        this.value = value;
+        this.err = err;
+    }
+
+    public static JsonFormFieldValidator createNumericValidator() {
+        return new JsonFormFieldValidator("v_numeric", "true", "Must be in digits(0..9)");
+    }
 }
