@@ -8,7 +8,7 @@ import com.google.api.client.util.Key;
 
 public class JsonFormField {
 
-    public static final String REQUIRED = "Required";
+    public static final String REQUIRED = "REQUIRED";
 
     @Key
     public String key;
