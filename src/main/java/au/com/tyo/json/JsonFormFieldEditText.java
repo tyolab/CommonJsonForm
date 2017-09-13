@@ -26,7 +26,7 @@ public class JsonFormFieldEditText extends JsonFormFieldWithTitleAndHint {
     }
 
     public JsonFormFieldEditText(String key, String title) {
-        this(key, title, "");
+        this(key, title, REQUIRED);
     }
 
     public void addValidator(JsonFormFieldValidator validator) {
