@@ -15,4 +15,6 @@ public interface Constants {
     String JSON_FORM_WIDGET_KEY_TITLED_EDIT_TEXT = "titled-edit-text";
 
     String JSON_FORM_WIDGET_KEY_DATE_PICKER = "titled-date-picker";
+
+    String JSON_FORM_WIDGET_KEY_CLICKABLE_LABEL = "clickable-label";
 }

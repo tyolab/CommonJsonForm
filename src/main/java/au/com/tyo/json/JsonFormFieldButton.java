@@ -14,6 +14,13 @@ public class JsonFormFieldButton extends JsonFormFieldTitledLabel {
 
     public static final int PICK_DATE = 1;
 
+    public static final int PICK_A_FILE = 2;
+
+    public static final int PICK_CUSTOM1 = 1000;
+    public static final int PICK_CUSTOM2 = 2000;
+    public static final int PICK_CUSTOM3 = 3000;
+    public static final int PICK_CUSTOM4 = 4000;
+
     @Key
     public String listener;
 
