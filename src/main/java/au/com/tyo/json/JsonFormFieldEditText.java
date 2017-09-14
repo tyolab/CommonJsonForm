@@ -27,11 +27,29 @@ public class JsonFormFieldEditText extends JsonFormFieldWithTitleAndHint {
 
     public JsonFormFieldEditText(String key, String title) {
         this(key, title, REQUIRED);
+        addRequiredValidator();
     }
 
     public void addValidator(JsonFormFieldValidator validator) {
         if (null == validators)
             validators = new ArrayList<>();
+
+        for (JsonFormFieldValidator tor : validators)
+            if (tor.equals(validator))
+                return;
+
         validators.add(validator);
+    }
+
+    public void addRequiredValidator() {
+        addValidator(JsonFormFieldValidator.createRequiredValidator());
+    }
+
+    public void addAllCapsValidator() {
+        addValidator(JsonFormFieldValidator.createAllCapsValidator());
+    }
+
+    public void addNumericValidator() {
+        addValidator(JsonFormFieldValidator.createNumericValidator());
     }
 }

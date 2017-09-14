@@ -23,7 +23,7 @@ public class JsonFormFieldRadio extends JsonFormFieldOptions {
                     break;
                 }
             }
-        if (value == null || value.length() == 0)
+        if (null != alt && value == null || value.length() == 0)
             value = alt;
     }
 }
