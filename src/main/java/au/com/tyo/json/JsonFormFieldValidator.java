@@ -25,7 +25,7 @@ public class JsonFormFieldValidator {
     }
 
     public static JsonFormFieldValidator createNumericValidator() {
-        return new JsonFormFieldValidator("v_numeric", "true", "Must be in digits(0..9)");
+        return new JsonFormFieldValidator("v_numeric", "true", "Number only");
     }
 
     public static JsonFormFieldValidator createRequiredValidator() {
