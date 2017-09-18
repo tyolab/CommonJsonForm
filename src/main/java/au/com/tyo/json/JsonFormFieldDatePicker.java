@@ -9,4 +9,8 @@ public class JsonFormFieldDatePicker extends JsonFormFieldButton {
     public JsonFormFieldDatePicker(String key, String title) {
         super(key, Constants.JSON_FORM_WIDGET_KEY_DATE_PICKER, title, PICK_DATE);
     }
+
+    public JsonFormFieldDatePicker(String key, String title, int pickType) {
+        super(key, Constants.JSON_FORM_WIDGET_KEY_DATE_PICKER, title, pickType);
+    }
 }
