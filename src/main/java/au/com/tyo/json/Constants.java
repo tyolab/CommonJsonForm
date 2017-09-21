@@ -6,7 +6,7 @@ package au.com.tyo.json;
 
 public interface Constants {
 
-    String JSON_FORM_WIDGET_KEY_LABEL = "titled-lable";
+    String JSON_FORM_WIDGET_KEY_LABEL = "titled-label";
 
     String JSON_FORM_WIDGET_KEY_BUTTON = "titled-button";
 

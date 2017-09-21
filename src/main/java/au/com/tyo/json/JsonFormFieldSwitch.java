@@ -13,10 +13,10 @@ public class JsonFormFieldSwitch extends JsonFormFieldTitledLabel {
     public String value;
 
     public JsonFormFieldSwitch(String key, String type, String title) {
-        super(key, type, title);
+        super(key, type, title, "");
     }
 
     public JsonFormFieldSwitch(String key, String title) {
-        super(key, Constants.JSON_FORM_WIDGET_KEY_SWITCH, title);
+        super(key, Constants.JSON_FORM_WIDGET_KEY_SWITCH, title, "");
     }
 }
