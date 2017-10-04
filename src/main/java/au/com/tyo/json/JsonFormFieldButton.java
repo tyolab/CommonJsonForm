@@ -33,9 +33,13 @@ public class JsonFormFieldButton extends JsonFormFieldTitledLabel {
     public String hint;
 
     public JsonFormFieldButton(String key, String type, String title, int pickType) {
+        this(key, type, title, pickType, REQUIRED);
+    }
+
+    public JsonFormFieldButton(String key, String type, String title, int pickType, String hint) {
         super(key, type, title, "");
         setPick(pickType);
-        hint = REQUIRED;
+        this.hint = hint;
     }
 
     public JsonFormFieldButton(String key, String title, int pickType) {
