@@ -16,6 +16,9 @@ public class JsonFormField {
     @Key
     public String type;
 
+    @Key
+    public String visible = "true";
+
     public JsonFormField(String key, String type) {
         this.key = key;
         this.type = type;
