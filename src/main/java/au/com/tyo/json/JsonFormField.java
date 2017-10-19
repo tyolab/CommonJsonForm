@@ -8,7 +8,7 @@ import com.google.api.client.util.Key;
 
 public class JsonFormField {
 
-    public static final String REQUIRED = "REQUIRED";
+    public static final String REQUIRED = "Required";
 
     @Key
     public String key;
@@ -19,9 +19,15 @@ public class JsonFormField {
     @Key
     public String visible = "true";
 
-    public JsonFormField(String key, String type) {
+    public boolean required = false;
+
+    public JsonFormField(String key, String type, boolean required) {
         this.key = key;
         this.type = type;
+        this.required = required;
     }
 
+    public JsonFormField(String key, String type) {
+        this(key, type, false);
+    }
 }

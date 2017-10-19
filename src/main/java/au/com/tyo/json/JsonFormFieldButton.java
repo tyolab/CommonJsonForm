@@ -40,6 +40,9 @@ public class JsonFormFieldButton extends JsonFormFieldTitledLabel {
         super(key, type, title, "");
         setPick(pickType);
         this.hint = hint;
+
+        if (hint.equals(REQUIRED))
+            required = true;
     }
 
     public JsonFormFieldButton(String key, String title, int pickType) {
@@ -47,8 +50,7 @@ public class JsonFormFieldButton extends JsonFormFieldTitledLabel {
     }
 
     public JsonFormFieldButton(String key, String title, int pickType, String hint) {
-        this(key, Constants.JSON_FORM_WIDGET_KEY_BUTTON, title, pickType);
-        this.hint = hint;
+        this(key, Constants.JSON_FORM_WIDGET_KEY_BUTTON, title, pickType, hint);
     }
 
     public JsonFormFieldButton(String key, String title) {
