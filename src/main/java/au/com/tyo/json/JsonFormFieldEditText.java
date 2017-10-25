@@ -17,6 +17,9 @@ public class JsonFormFieldEditText extends JsonFormFieldWithTitleAndHint {
     @Key
     public List<JsonFormFieldValidator> validators;
 
+    @Key
+    public List<JsonFormFieldFilter> filters;
+
     public JsonFormFieldEditText(String key, String type, String title, String hint) {
         super(key, type, title, hint);
     }
@@ -45,11 +48,26 @@ public class JsonFormFieldEditText extends JsonFormFieldWithTitleAndHint {
         addValidator(JsonFormFieldValidator.createRequiredValidator());
     }
 
-    public void addAllCapsValidator() {
-        addValidator(JsonFormFieldValidator.createAllCapsValidator());
+    public void addAllCapsFilter() {
+        addFilter(JsonFormFieldFilter.createAllCapsFilter());
     }
 
     public void addNumericValidator() {
         addValidator(JsonFormFieldValidator.createNumericValidator());
+    }
+
+    public void addNumericFilter() {
+        addFilter(JsonFormFieldFilter.createNumericFilter());
+    }
+
+    public void addFilter(JsonFormFieldFilter filter) {
+        if (null == filters)
+            filters = new ArrayList<>();
+
+        for (JsonFormFieldFilter tor : filters)
+            if (tor.equals(filter))
+                return;
+
+        filters.add(filter);
     }
 }
