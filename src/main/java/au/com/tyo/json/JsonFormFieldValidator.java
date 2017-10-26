@@ -23,7 +23,7 @@ public class JsonFormFieldValidator extends NameValuePair {
     }
 
     /**
-     * The error information dosen't look good in material edit text widget
+     * The error information doesn't look good in material edit text widget
      *
      * @return
      */
@@ -32,7 +32,7 @@ public class JsonFormFieldValidator extends NameValuePair {
     }
 
     /**
-     * The error information dosen't look good in material edit text widget
+     * The error information doesn't look good in material edit text widget
      *
      * @return
      */
