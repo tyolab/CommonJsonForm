@@ -70,4 +70,19 @@ public class JsonFormFieldEditText extends JsonFormFieldWithTitleAndHint {
 
         filters.add(filter);
     }
+
+    public void addCapSentencesFilter() {
+        addFilter(JsonFormFieldFilter.createTextFilter());
+        addFilter(JsonFormFieldFilter.createCapSentencesFilter());
+    }
+
+    public void addCapWordsFilter() {
+        addFilter(JsonFormFieldFilter.createTextFilter());
+        addFilter(JsonFormFieldFilter.createCapWordsFilter());
+    }
+
+    public void addCapCharactersFilter() {
+        addFilter(JsonFormFieldFilter.createTextFilter());
+        addFilter(JsonFormFieldFilter.createCapCharactersFilter());
+    }
 }
