@@ -14,6 +14,7 @@ public class JsonFormFieldLabel extends JsonFormField {
     public JsonFormFieldLabel(String key, String type, String text) {
         super(key, type);
         this.text = text;
+        this.required = false;
     }
 
 }
