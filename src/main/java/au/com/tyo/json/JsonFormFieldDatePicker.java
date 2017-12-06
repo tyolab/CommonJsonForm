@@ -7,6 +7,7 @@ package au.com.tyo.json;
 public class JsonFormFieldDatePicker extends JsonFormFieldButton {
 
     public long max = -1;
+    public long min = -1;
 
     public JsonFormFieldDatePicker(String key, String title) {
         super(key, Constants.JSON_FORM_WIDGET_KEY_DATE_PICKER, title, PICK_DATE);
