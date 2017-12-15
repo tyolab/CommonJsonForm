@@ -35,6 +35,7 @@ public class JsonFormFieldOptions extends JsonFormField {
     }
 
     public void check(List<String> list) {
-
+        throw new IllegalStateException("Only check box can use this method");
     }
+
 }

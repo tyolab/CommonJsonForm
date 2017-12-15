@@ -26,4 +26,8 @@ public class JsonFormFieldRadio extends JsonFormFieldOptions {
         if (null != alt && value == null || value.length() == 0)
             value = alt;
     }
+
+    public void check(String check) {
+        check(check, null);
+    }
 }
