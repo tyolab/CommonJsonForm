@@ -16,14 +16,16 @@ public class JsonFormFieldRadio extends JsonFormFieldOptions {
     }
 
     public void check(String check, String alt) {
-        if (null != check && null != options)
-            for (JsonFormFieldOption option : options) {
-                if (check.equals(option.text)) {
-                    value = option.key;
-                    break;
-                }
-            }
-        if (null != alt && value == null || value.length() == 0)
+//        if (null != check && null != options)
+//            for (JsonFormFieldOption option : options) {
+//                if (check.equals(option.key)) {
+//                    value = option.key;
+//                    return;
+//                }
+//            }
+        value = check;
+
+        if (null != alt && (value == null || value.length() == 0))
             value = alt;
     }
 
