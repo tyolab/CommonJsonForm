@@ -1,9 +1,6 @@
 package au.com.tyo.json;
 
 import com.google.api.client.util.Key;
-import com.google.gson.internal.LinkedTreeMap;
-
-import java.util.Set;
 
 /**
  * Created by Eric Tang (eric.tang@tyo.com.au) on 17/7/17.
@@ -56,22 +53,6 @@ public class JsonForm extends JsonBase {
     public JsonFormStep getStep(int i) {
         return step1;
         // return steps.get(i);
-    }
-
-    public static JsonForm toForm(LinkedTreeMap data) {
-        JsonForm form = new JsonForm();
-        form.createNewStep();
-
-        Set<LinkedTreeMap.Entry<String, Object>> list = data.entrySet();
-
-        for (LinkedTreeMap.Entry<String, Object> entry : list) {
-            String key = entry.getKey();
-            Object value = entry.getValue();
-
-
-        }
-
-        return form;
     }
 
 }
