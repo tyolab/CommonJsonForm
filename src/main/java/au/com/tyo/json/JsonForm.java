@@ -8,6 +8,11 @@ import com.google.api.client.util.Key;
 
 public class JsonForm extends JsonBase {
 
+    public static String FORM_META_KEY_I18N = "i18n";
+    public static String FORM_META_KEY_DATA_TYPE = "type";
+    public static String FORM_META_KEY_WIDGET = "widget";
+    public static String FORM_META_KEY_VISIBLE = "visible";
+
     /**
      *
      */

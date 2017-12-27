@@ -19,6 +19,12 @@ public class JsonFormField {
     @Key
     public String visible = "true";
 
+    @Key
+    public Object value;
+
+    /**
+     * for form validation
+     */
     public boolean required = false;
 
     public JsonFormField(String key, String type, boolean required) {

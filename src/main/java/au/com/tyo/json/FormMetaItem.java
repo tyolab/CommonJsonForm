@@ -16,24 +16,12 @@
 
 package au.com.tyo.json;
 
-import java.util.Map;
-
 /**
- * Created by Eric Tang (eric.tang@tyo.com.au) on 20/12/17.
+ * Created by Eric Tang (eric.tang@tyo.com.au) on 27/12/17.
  */
 
-public interface FormItem {
+public interface FormMetaItem {
 
-    /**
-     * Not a method that a generic form has to have
-     */
-    /// String getImageUrl();
+    boolean isVisible();
 
-    JsonForm toJsonForm();
-
-    Map getFormKeyValueMap();
-
-    Map getFormMetaDataMap();
-
-    Object getValue(String key);
 }
