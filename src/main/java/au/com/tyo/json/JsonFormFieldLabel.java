@@ -12,6 +12,9 @@ public class JsonFormFieldLabel extends JsonFormField {
     @Deprecated
     public String text;
 
+    @Key
+    public String textStyle;
+
     public JsonFormFieldLabel(String key, String type, String text) {
         super(key, type);
         this.text = text;
