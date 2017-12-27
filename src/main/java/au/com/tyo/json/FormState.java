@@ -22,10 +22,10 @@ package au.com.tyo.json;
 
 public interface FormState {
 
-    void setFormState(FormState updated);
+    void setFormState(FormState.State updated);
 
-    FormState getFormState();
+    FormState.State getFormState();
 
-    enum States {NONE, NEW, UPDATED, DELETED, VIEWING, UPDATING, AUTO_FILLED};
+    enum State {NONE, NEW, UPDATED, DELETED, VIEWING, UPDATING, AUTO_FILLED};
 
 }

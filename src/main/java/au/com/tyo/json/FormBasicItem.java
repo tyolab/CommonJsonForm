@@ -16,19 +16,25 @@
 
 package au.com.tyo.json;
 
+import java.util.Map;
+
 /**
- * Created by Eric Tang (eric.tang@tyo.com.au) on 22/12/17.
+ * Created by Eric Tang (eric.tang@tyo.com.au) on 27/12/17.
  */
 
-public abstract class FormBase implements FormItem {
+public interface FormBasicItem {
 
-    private FormState.State formState;
+    /**
+     * Not a method that a generic form has to have
+     */
+    /// String getImageUrl();
 
-    public FormState.State getFormState() {
-        return formState;
-    }
+    JsonForm toJsonForm();
 
-    public void setFormState(FormState.State formState) {
-        this.formState = formState;
-    }
+    Map getFormKeyValueMap();
+
+    Map getFormMetaDataMap();
+
+    Object getValue(String key);
+
 }
