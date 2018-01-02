@@ -18,6 +18,7 @@ package au.com.tyo.json;
 
 import com.google.api.client.json.GenericJson;
 
+import java.util.Comparator;
 import java.util.Map;
 
 /**
@@ -26,13 +27,34 @@ import java.util.Map;
 
 public class FormMetaDataGson extends GenericJson {
 
-    public boolean isVisible(String key) {
-        Object object =  get(key);
-
-        if (object instanceof Map) {
-            Map map = (Map) object;
-            return (boolean) map.get("visible");
+    public boolean isVisible() {
+        if (containsKey(JsonForm.FORM_META_KEY_VISIBLE)) {
+            return (boolean) get(JsonForm.FORM_META_KEY_VISIBLE);
         }
         return false;
+    }
+
+    public int getDisplayOrder() {
+        return getDisplayOrder(this);
+    }
+
+    public static int getDisplayOrder(Map map) {
+        return (int) map.get(JsonForm.FORM_META_KEY_DISPLAY_ORDER);
+    }
+
+    public static class DisplayOrderComparator implements Comparator<Map> {
+
+        @Override
+        public int compare(Map m1, Map m2) {
+            int o1 = getDisplayOrder(m1);
+            int o2 = getDisplayOrder(m2);
+
+            if (o1 == o2)
+                return 0;
+            else if (o1 > o2)
+                return 1;
+            else
+                return -1;
+        }
     }
 }

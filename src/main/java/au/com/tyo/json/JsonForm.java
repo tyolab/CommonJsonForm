@@ -14,6 +14,8 @@ public class JsonForm extends JsonBase implements FormState {
     public static String FORM_META_KEY_DATA_TYPE = "type";
     public static String FORM_META_KEY_WIDGET = "widget";
     public static String FORM_META_KEY_VISIBLE = "visible";
+    public static String FORM_META_KEY_DISPLAY_ORDER = "display_order";
+    public static String FORM_META_KEY_ATTRIBUTES = "attributes";
 
     /**
      *
