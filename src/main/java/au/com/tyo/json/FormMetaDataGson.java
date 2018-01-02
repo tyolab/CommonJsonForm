@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017 TYONLINE TECHNOLOGY PTY. LTD. (TYO Lab)
+ * Copyright (c) 2018 TYONLINE TECHNOLOGY PTY. LTD. (TYO Lab)
  *
  *  Licensed under the Apache License, Version 2.0 (the "License");
  *  you may not use this file except in compliance with the License.
@@ -16,19 +16,23 @@
 
 package au.com.tyo.json;
 
+import com.google.api.client.json.GenericJson;
+
+import java.util.Map;
+
 /**
- * Created by Eric Tang (eric.tang@tyo.com.au) on 22/12/17.
+ * Created by Eric Tang (eric.tang@tyo.com.au) on 2/1/18.
  */
 
-public abstract class FormBase implements FormItem {
+public class FormMetaDataGson extends GenericJson {
 
-    private FormState.State formState;
+    public boolean isVisible(String key) {
+        Object object =  get(key);
 
-    public FormState.State getFormState() {
-        return formState;
-    }
-
-    public void setFormState(FormState.State formState) {
-        this.formState = formState;
+        if (object instanceof Map) {
+            Map map = (Map) object;
+            return (boolean) map.get("visible");
+        }
+        return false;
     }
 }

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017 TYONLINE TECHNOLOGY PTY. LTD. (TYO Lab)
+ * Copyright (c) 2018 TYONLINE TECHNOLOGY PTY. LTD. (TYO Lab)
  *
  *  Licensed under the Apache License, Version 2.0 (the "License");
  *  you may not use this file except in compliance with the License.
@@ -17,9 +17,11 @@
 package au.com.tyo.json;
 
 /**
- * Created by Eric Tang (eric.tang@tyo.com.au) on 20/12/17.
+ * Created by Eric Tang (eric.tang@tyo.com.au) on 2/1/18.
  */
 
-public interface FormItem extends FormBasicItem {
-
+/**
+ * The base class for form object
+ */
+public abstract class FormObject {
 }

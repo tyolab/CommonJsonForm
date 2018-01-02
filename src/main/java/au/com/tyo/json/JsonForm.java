@@ -6,7 +6,7 @@ import com.google.api.client.util.Key;
  * Created by Eric Tang (eric.tang@tyo.com.au) on 17/7/17.
  */
 
-public class JsonForm extends JsonBase {
+public class JsonForm extends JsonBase implements FormState {
 
     public static final Object FORM_META_KEY_ORIENTATION = "orientation";
     public static final Object FORM_META_KEY_TEXT_STYLE = "text_style";
@@ -31,6 +31,8 @@ public class JsonForm extends JsonBase {
 
     @Key
     public String title = "";
+
+    private FormState.State formState;
 
     public JsonForm(String title) {
         super();
@@ -62,4 +64,11 @@ public class JsonForm extends JsonBase {
         // return steps.get(i);
     }
 
+    public FormState.State getFormState() {
+        return formState;
+    }
+
+    public void setFormState(FormState.State formState) {
+        this.formState = formState;
+    }
 }
