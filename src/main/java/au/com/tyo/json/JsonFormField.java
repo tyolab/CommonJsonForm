@@ -19,7 +19,25 @@ public class JsonFormField {
     @Key
     public String visible = "true";
 
+    @Key
+    public Object value;
+
+    /**
+     * for form validation
+     */
     public boolean required = false;
+
+    /**
+     * the orientation of field like title, user input
+     */
+    @Key
+    public String orientation;
+
+    /**
+     * Other attributes in json
+     */
+    @Key
+    public String attributes;
 
     public JsonFormField(String key, String type, boolean required) {
         this.key = key;
