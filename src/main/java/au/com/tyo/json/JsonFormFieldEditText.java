@@ -20,6 +20,12 @@ public class JsonFormFieldEditText extends JsonFormFieldWithTitleAndHint {
     @Key
     public List<JsonFormFieldFilter> filters;
 
+    @Key
+    public int maxLength = -1;
+
+    @Key
+    public int minLength = -1;
+
     public JsonFormFieldEditText(String key, String type, String title, String hint) {
         super(key, type, title, hint);
     }
