@@ -8,8 +8,9 @@ import com.google.api.client.util.Key;
 
 public class JsonForm extends JsonBase implements FormState {
 
-    public static final Object FORM_META_KEY_ORIENTATION = "orientation";
-    public static final Object FORM_META_KEY_TEXT_STYLE = "text_style";
+    public static final String FORM_META_KEY_ORIENTATION = "orientation";
+    public static final String FORM_META_KEY_TEXT_STYLE = "text_style";
+    public static final String FORM_META_KEY_HINT = "hint";
     public static String FORM_META_KEY_I18N = "i18n";
     public static String FORM_META_KEY_DATA_TYPE = "type";
     public static String FORM_META_KEY_WIDGET = "widget";
