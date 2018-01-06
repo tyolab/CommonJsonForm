@@ -22,4 +22,6 @@ package au.com.tyo.json;
 
 public interface FormItem extends FormBasicItem {
 
+    void setValue(String key, String childKey, Object value);
+
 }
