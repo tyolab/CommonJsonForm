@@ -58,15 +58,27 @@ public class DataJson extends GenericJson {
 
     public int getInt(String key) {
         try {
-            return Integer.parseInt((String) get(key));
+            return (int) get(key);
         }
-        catch (Exception ex) {}
+        catch (Exception ex) {
+            try {
+                return (int) getDouble(key);
+            }
+            catch (Exception e1) {
+                try {
+                    return (int) getDoubleFromString(key);
+                }
+                catch (Exception e2) {
+
+                }
+            }
+        }
         return 0;
     }
 
     public double getDouble(String key) {
         try {
-            return Double.parseDouble((String) get(key));
+            return (double) get(key);
         }
         catch (Exception ex) {}
         return 0;
