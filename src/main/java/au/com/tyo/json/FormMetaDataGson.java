@@ -16,8 +16,6 @@
 
 package au.com.tyo.json;
 
-import com.google.api.client.json.GenericJson;
-
 import java.util.Comparator;
 import java.util.Map;
 
@@ -25,7 +23,7 @@ import java.util.Map;
  * Created by Eric Tang (eric.tang@tyo.com.au) on 2/1/18.
  */
 
-public class FormMetaDataGson extends GenericJson {
+public class FormMetaDataGson extends DataJson {
 
     public boolean isVisible() {
         if (containsKey(JsonForm.FORM_META_KEY_VISIBLE)) {
