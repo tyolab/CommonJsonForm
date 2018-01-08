@@ -83,4 +83,10 @@ public class DataJson extends GenericJson {
         catch (Exception ex) {}
         return 0;
     }
+
+    public Object get(String key) {
+        if (containsKey(key))
+            return super.get(key);
+        return "";
+    }
 }
