@@ -16,7 +16,7 @@ public class JsonFormFieldWithTitleAndHint extends JsonFormFieldWithTitle {
         this.hint = hint;
 
         if (hint.equals(REQUIRED))
-            required = true;
+            required = VALUE_REQUIRED;
     }
 
 }

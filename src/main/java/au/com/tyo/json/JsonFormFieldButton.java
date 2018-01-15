@@ -42,7 +42,7 @@ public class JsonFormFieldButton extends JsonFormFieldTitledLabel {
         this.hint = hint;
 
         if (hint.equals(REQUIRED))
-            required = true;
+            required = VALUE_REQUIRED;
     }
 
     public JsonFormFieldButton(String key, String title, int pickType) {
