@@ -29,7 +29,7 @@ public class JsonFormField {
     /**
      * for form validation
      */
-    public int required = -1; // -1 nullable, 0 optional, 1 required
+    public int required = VALUE_NULLABLE; // -1 nullable, 0 optional, 1 required
 
     /**
      * the orientation of field like title, user input
