@@ -136,4 +136,5 @@ public class DataJson extends GenericJson {
         map.put(name, value);
         return map;
     }
+
 }
