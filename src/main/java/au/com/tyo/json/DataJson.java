@@ -17,6 +17,11 @@
 package au.com.tyo.json;
 
 import com.google.api.client.json.GenericJson;
+import com.google.api.client.util.GenericData;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
 
 /**
  * Created by Eric Tang (eric.tang@tyo.com.au) on 8/1/18.
@@ -88,5 +93,47 @@ public class DataJson extends GenericJson {
         if (containsKey(key))
             return super.get(key);
         return "";
+    }
+
+    protected List getListData(String name) {
+        return getListData(this, name);
+    }
+
+    protected static List getListData(Map parentMap, String name) {
+        List list = (List) parentMap.get(name);
+
+        if (list == null) {
+            list = createList();
+            parentMap.put(name, list);
+        }
+        return list;
+    }
+
+    protected static List createList() {
+        return new ArrayList();
+    }
+
+    protected Map getMapData(String name) {
+        return getMapData(this, name);
+    }
+
+    protected static Map getMapData(Map parentMap, String name) {
+        Map map = (Map) parentMap.get(name);
+
+        if (map == null) {
+            map = createMapData();
+            parentMap.put(name, map);
+        }
+        return map;
+    }
+
+    protected static GenericData createMapData() {
+        return new GenericData();
+    }
+
+    protected Map createMapData(String name, Object value) {
+        Map map = createMapData();
+        map.put(name, value);
+        return map;
     }
 }
