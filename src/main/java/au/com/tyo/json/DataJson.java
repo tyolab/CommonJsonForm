@@ -83,9 +83,12 @@ public class DataJson extends GenericJson {
 
     public double getDouble(String key) {
         try {
-            return (double) get(key);
+            Double d = (Double) get(key);
+            return d;
         }
-        catch (Exception ex) {}
+        catch (Exception ex) {
+
+        }
         return 0;
     }
 
