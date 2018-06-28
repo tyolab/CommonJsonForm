@@ -44,16 +44,29 @@ public class DataJson extends GenericJson {
         try {
             value = Float.parseFloat((String) get(key));
         }
-        catch (Exception ex) {}
+        catch (Exception ex) {
+            ex.printStackTrace();
+        }
         return value;
     }
 
     public double getDoubleFromString(String key) {
+        Object v = get(key);
         double value = 0f;
-        try {
-            value = Double.parseDouble((String) get(key));
+        if (v instanceof Double || v instanceof Float || v instanceof Integer) {
+            try {
+                value = (double) v;
+            } catch (Exception ex) {
+                ex.printStackTrace();
+            }
         }
-        catch (Exception ex) {}
+        else if (v instanceof String)
+            try {
+                value = Double.parseDouble((String) v);
+            }
+            catch (Exception ex) {
+                ex.printStackTrace();
+            }
         return value;
     }
 
@@ -62,23 +75,77 @@ public class DataJson extends GenericJson {
     }
 
     public int getInt(String key) {
-        try {
-            return (int) get(key);
+        Object value = get(key);
+        if (value instanceof Integer) {
+            try {
+                return (int) value;
+            } catch (Exception ex) {
+                ex.printStackTrace();
+            }
         }
-        catch (Exception ex) {
+        else if (value instanceof Double) {
             try {
                 return (int) getDouble(key);
             }
             catch (Exception e1) {
-                try {
-                    return (int) getDoubleFromString(key);
-                }
-                catch (Exception e2) {
-
-                }
+                e1.printStackTrace();
             }
         }
+        else if (value instanceof String) {
+            try {
+                return (int) getDoubleFromString(key);
+            }
+            catch (Exception e2) {
+                e2.printStackTrace();
+            }
+        }
+
         return 0;
+    }
+
+    public String getString(String key) {
+        Object value = get(key);
+        if (value instanceof String) {
+            try {
+                return (String) value;
+            }
+            catch (Exception e2) {
+                e2.printStackTrace();
+            }
+        }
+        else if (value instanceof Integer) {
+            try {
+                return String.valueOf((int) value);
+            } catch (Exception ex) {
+                ex.printStackTrace();
+            }
+        }
+        else if (value instanceof Double) {
+            try {
+                return String.valueOf(getDouble(key));
+            }
+            catch (Exception e1) {
+                e1.printStackTrace();
+            }
+        }
+        else if (value instanceof Float) {
+            try {
+                return String.valueOf(getFloat(key));
+            }
+            catch (Exception e2) {
+                e2.printStackTrace();
+            }
+        }
+        else if (value instanceof Boolean) {
+            try {
+                return String.valueOf(value);
+            }
+            catch (Exception e2) {
+                e2.printStackTrace();
+            }
+        }
+
+        return value.toString();
     }
 
     public double getDouble(String key) {
@@ -87,9 +154,20 @@ public class DataJson extends GenericJson {
             return d;
         }
         catch (Exception ex) {
-
+            ex.printStackTrace();
         }
         return 0;
+    }
+
+    public float getFloat(String key) {
+        try {
+            Double d = (Double) getDouble(key);
+            return d.floatValue();
+        }
+        catch (Exception ex) {
+            ex.printStackTrace();
+        }
+        return 0.0f;
     }
 
     public Object get(String key) {
