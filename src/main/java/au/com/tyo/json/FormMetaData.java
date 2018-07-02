@@ -23,7 +23,7 @@ import java.util.Map;
  * Created by Eric Tang (eric.tang@tyo.com.au) on 2/1/18.
  */
 
-public class FormMetaDataGson extends DataJson {
+public class FormMetaData extends DataJson {
 
     public boolean isVisible() {
         if (containsKey(JsonForm.FORM_META_KEY_VISIBLE)) {
