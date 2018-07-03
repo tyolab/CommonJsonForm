@@ -22,7 +22,7 @@ import java.util.Map;
  * Created by Eric Tang (eric.tang@tyo.com.au) on 27/12/17.
  */
 
-public interface FormBasicItem {
+public interface FormBasicItem<K, V> extends Map<K, V> {
 
     /**
      * Not a method that a generic form has to have

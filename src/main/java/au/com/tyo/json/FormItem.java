@@ -20,8 +20,6 @@ package au.com.tyo.json;
  * Created by Eric Tang (eric.tang@tyo.com.au) on 20/12/17.
  */
 
-public interface FormItem extends FormBasicItem {
-
-    void put(String key, Object value);
+public interface FormItem<K, V> extends FormBasicItem<K, V> {
 
 }

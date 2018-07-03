@@ -233,4 +233,9 @@ public class DataJson extends GenericJson {
 
         return 0;
     }
+
+    @Override
+    public String toString() {
+        return JsonBase.toJson(this);
+    }
 }
