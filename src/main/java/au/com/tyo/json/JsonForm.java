@@ -74,4 +74,8 @@ public class JsonForm extends JsonBase implements FormState {
     public void setFormState(FormState.State formState) {
         this.formState = formState;
     }
+
+    public void sort() {
+        step1.sort();
+    }
 }

@@ -6,7 +6,7 @@ import com.google.api.client.util.Key;
  * Created by Eric Tang (eric.tang@tyo.com.au) on 17/7/17.
  */
 
-public class JsonFormField {
+public class JsonFormField implements Comparable<JsonFormField> {
 
     public static final String REQUIRED = "Required";
 
@@ -43,6 +43,8 @@ public class JsonFormField {
     @Key
     public String attributes;
 
+    public int display_order;
+
     public JsonFormField(String key, String type, boolean required) {
         this.key = key;
         this.type = type;
@@ -51,5 +53,10 @@ public class JsonFormField {
 
     public JsonFormField(String key, String type) {
         this(key, type, false);
+    }
+
+    @Override
+    public int compareTo(JsonFormField jsonFormField) {
+        return Integer.compare(this.display_order, jsonFormField.display_order);
     }
 }

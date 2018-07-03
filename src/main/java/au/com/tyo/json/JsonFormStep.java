@@ -3,6 +3,7 @@ package au.com.tyo.json;
 import com.google.api.client.util.Key;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 /**
@@ -28,5 +29,9 @@ public class JsonFormStep {
     public JsonFormField addField(JsonFormField field) {
         fields.add(field);
         return field;
+    }
+
+    public void sort() {
+        Collections.sort(fields);
     }
 }

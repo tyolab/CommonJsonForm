@@ -40,9 +40,13 @@ public class DataJson extends GenericJson {
     }
 
     public float getFloatString(String key) {
+        return getFloatString(this, key);
+    }
+
+    public static float getFloatString(Map map, String key) {
         float value = 0f;
         try {
-            value = Float.parseFloat((String) get(key));
+            value = Float.parseFloat((String) map.get(key));
         }
         catch (Exception ex) {
             ex.printStackTrace();
@@ -51,7 +55,11 @@ public class DataJson extends GenericJson {
     }
 
     public double getDoubleFromString(String key) {
-        Object v = get(key);
+        return getDoubleFromString(this, key);
+    }
+
+    public static double getDoubleFromString(Map map, String key) {
+        Object v = map.get(key);
         double value = 0f;
         if (v instanceof Double || v instanceof Float || v instanceof Integer) {
             try {
@@ -75,32 +83,7 @@ public class DataJson extends GenericJson {
     }
 
     public int getInt(String key) {
-        Object value = get(key);
-        if (value instanceof Integer) {
-            try {
-                return (int) value;
-            } catch (Exception ex) {
-                ex.printStackTrace();
-            }
-        }
-        else if (value instanceof Double) {
-            try {
-                return (int) getDouble(key);
-            }
-            catch (Exception e1) {
-                e1.printStackTrace();
-            }
-        }
-        else if (value instanceof String) {
-            try {
-                return (int) getDoubleFromString(key);
-            }
-            catch (Exception e2) {
-                e2.printStackTrace();
-            }
-        }
-
-        return 0;
+        return getInt(this, key);
     }
 
     public String getString(String key) {
@@ -149,8 +132,12 @@ public class DataJson extends GenericJson {
     }
 
     public double getDouble(String key) {
+        return getDouble(this, key);
+    }
+
+    public static double getDouble(Map map, String key) {
         try {
-            Double d = (Double) get(key);
+            Double d = (Double) map.get(key);
             return d;
         }
         catch (Exception ex) {
@@ -218,4 +205,32 @@ public class DataJson extends GenericJson {
         return map;
     }
 
+    public static int getInt(Map map, String key) {
+        Object value = map.get(key);
+        if (value instanceof Integer) {
+            try {
+                return (int) value;
+            } catch (Exception ex) {
+                ex.printStackTrace();
+            }
+        }
+        else if (value instanceof Double) {
+            try {
+                return (int) getDouble(map, key);
+            }
+            catch (Exception e1) {
+                e1.printStackTrace();
+            }
+        }
+        else if (value instanceof String) {
+            try {
+                return (int) getDoubleFromString(map, key);
+            }
+            catch (Exception e2) {
+                e2.printStackTrace();
+            }
+        }
+
+        return 0;
+    }
 }
