@@ -234,6 +234,19 @@ public class DataJson extends GenericJson {
         return 0;
     }
 
+    public boolean getBoolean(String key) {
+        return getBoolean(this, key);
+    }
+
+    public static boolean getBoolean(Map map, String key) {
+        Object value = map.get(key);
+        if (value instanceof Boolean)
+            return (boolean) value;
+        else if (value instanceof String)
+            return Boolean.parseBoolean((String) value);
+        return Boolean.parseBoolean(value.toString());
+    }
+
     @Override
     public String toString() {
         return JsonBase.toJson(this);
