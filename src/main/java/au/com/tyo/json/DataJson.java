@@ -240,6 +240,9 @@ public class DataJson extends GenericJson {
 
     public static boolean getBoolean(Map map, String key) {
         Object value = map.get(key);
+        if (null == value)
+            return false;
+
         if (value instanceof Boolean)
             return (boolean) value;
         else if (value instanceof String)
