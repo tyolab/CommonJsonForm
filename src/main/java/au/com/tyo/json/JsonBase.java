@@ -17,6 +17,10 @@ public class JsonBase implements Serializable {
         gson = new GsonBuilder().create();
     }
 
+    public static Gson getGson() {
+        return gson;
+    }
+
     public static String toJson(Object form) {
         return gson.toJson(form);
     }
