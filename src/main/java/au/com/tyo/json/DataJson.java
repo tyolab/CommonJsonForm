@@ -206,6 +206,10 @@ public class DataJson extends GenericJson {
     }
 
     public static int getInt(Map map, String key) {
+        return getInt(map, key, 0);
+    }
+
+    public static int getInt(Map map, String key, int alternative) {
         Object value = map.get(key);
         if (value instanceof Integer) {
             try {
@@ -231,7 +235,7 @@ public class DataJson extends GenericJson {
             }
         }
 
-        return 0;
+        return alternative;
     }
 
     public boolean getBoolean(String key) {
