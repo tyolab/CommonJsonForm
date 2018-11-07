@@ -10,28 +10,24 @@ import java.util.List;
  * Created by Eric Tang (eric.tang@tyo.com.au) on 17/7/17.
  */
 
-public class JsonFormStep {
+public class JsonFormStep extends JsonFormGroup {
 
+    /**
+     * Groups with fields
+     */
     @Key
-    public List<JsonFormField> fields;
+    public List<JsonFormGroup> groups;
 
-    @Key
-    public String title;
+    public void createGroups() {
+        groups = new ArrayList<>();
+    }
+
+    public JsonFormGroup addGroup(JsonFormGroup group) {
+        groups.add(group);
+        return group;
+    }
 
     public JsonFormStep(String s) {
-        this.title = s;
-    }
-
-    public void createFields() {
-        fields = new ArrayList<>();
-    }
-
-    public JsonFormField addField(JsonFormField field) {
-        fields.add(field);
-        return field;
-    }
-
-    public void sort() {
-        Collections.sort(fields);
+        super(s);
     }
 }

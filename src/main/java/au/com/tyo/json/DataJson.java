@@ -163,6 +163,11 @@ public class DataJson extends GenericJson {
         return "";
     }
 
+    protected void addListData(String name, Object data) {
+        List list = getListData(name);
+        list.add(data);
+    }
+
     protected List getListData(String name) {
         return getListData(this, name);
     }
