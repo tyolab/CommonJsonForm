@@ -1,5 +1,7 @@
 package au.com.tyo.json;
 
+import au.com.tyo.json.util.NameValuePair;
+
 /**
  * Created by Eric Tang (eric.tang@tyo.com.au) on 23/8/17.
  */

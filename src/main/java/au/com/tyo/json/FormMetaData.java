@@ -19,6 +19,8 @@ package au.com.tyo.json;
 import java.util.Comparator;
 import java.util.Map;
 
+import au.com.tyo.json.util.DataJson;
+
 /**
  * Created by Eric Tang (eric.tang@tyo.com.au) on 2/1/18.
  */

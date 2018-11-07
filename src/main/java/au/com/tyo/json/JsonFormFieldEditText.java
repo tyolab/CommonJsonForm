@@ -12,6 +12,9 @@ import java.util.List;
 public class JsonFormFieldEditText extends JsonFormFieldWithTitleAndHint {
 
     @Key
+    public boolean editable;
+
+    @Key
     public List<JsonFormFieldValidator> validators;
 
     @Key

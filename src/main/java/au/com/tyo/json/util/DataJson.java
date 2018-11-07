@@ -14,7 +14,7 @@
  *  limitations under the License.
  */
 
-package au.com.tyo.json;
+package au.com.tyo.json.util;
 
 import com.google.api.client.json.GenericJson;
 import com.google.api.client.util.GenericData;
@@ -22,6 +22,8 @@ import com.google.api.client.util.GenericData;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
+
+import au.com.tyo.json.JsonBase;
 
 /**
  * Created by Eric Tang (eric.tang@tyo.com.au) on 8/1/18.

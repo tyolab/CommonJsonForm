@@ -1,4 +1,4 @@
-package au.com.tyo.json;
+package au.com.tyo.json.util;
 
 import com.google.api.client.util.Key;
 
