@@ -26,14 +26,14 @@ public class DataFormEx extends DataJson {
 
     public static class FormGroup extends OrderedDataMap {
 
-        private boolean showGroupTitle = true;
+        private boolean showingGroupTitle = false;
 
-        public boolean isShowGroupTitle() {
-            return showGroupTitle;
+        public boolean isShowingGroupTitle() {
+            return showingGroupTitle;
         }
 
-        public void setShowGroupTitle(boolean showGroupTitle) {
-            this.showGroupTitle = showGroupTitle;
+        public void setShowingGroupTitle(boolean showingGroupTitle) {
+            this.showingGroupTitle = showingGroupTitle;
         }
 
         public FormGroup(String title) {

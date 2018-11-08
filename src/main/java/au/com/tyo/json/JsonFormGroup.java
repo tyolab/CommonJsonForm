@@ -17,8 +17,12 @@ public class JsonFormGroup {
     @Key
     public boolean titleVisible ;
 
-    public JsonFormGroup(String s) {
-        this.title = s;
+    public JsonFormGroup(String title) {
+        this.title = title;
+    }
+
+    public JsonFormGroup() {
+
     }
 
     public void createFields() {
