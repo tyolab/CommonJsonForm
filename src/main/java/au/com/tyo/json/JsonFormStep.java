@@ -18,11 +18,10 @@ public class JsonFormStep extends JsonFormGroup {
     @Key
     public List<JsonFormGroup> groups;
 
-    public void createGroups() {
-        groups = new ArrayList<>();
-    }
-
     public JsonFormGroup addGroup(JsonFormGroup group) {
+        if (null == groups)
+            groups = new ArrayList<>();
+
         groups.add(group);
         return group;
     }

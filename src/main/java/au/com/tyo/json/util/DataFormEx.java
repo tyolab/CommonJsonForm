@@ -11,18 +11,20 @@ public class DataFormEx extends DataJson {
      * for anything dynamic, should use a header field
      *
      */
-    private static final String KEY_HEADER = "header";
+    public static final String KEY_HEADER = "$header";
 
     /**
      * Static footer
      *
      * for anything dynamic, should use a footer field
      */
-    private static final String KEY_FOOTER = "footer";
+    public static final String KEY_FOOTER = "$footer";
 
-    private static final String KEY_GROUPS = "groups";
+    public static final String KEY_GROUPS = "$groups";
 
-    private static final String KEY_TITLE = "title";
+    public static final String KEY_TITLE = "$title";
+
+    public static final String KEY_EDITABLE = "$editable";
 
     public static class FormGroup extends OrderedDataMap {
 
@@ -51,6 +53,12 @@ public class DataFormEx extends DataJson {
         public void addField(String title, String value) {
             putInOrder(title, value);
         }
+
+        // @Override
+        // public Object get(int pos) {
+        //     String keyStr = getOrderedKeys().get(pos);
+        //     return super.get(pos);
+        // }
     }
 
     public void addGroup(Map group) {
@@ -83,5 +91,9 @@ public class DataFormEx extends DataJson {
 
     public int getHeader() {
         return getInt(KEY_HEADER);
+    }
+
+    public void setFormEditable(boolean editable) {
+        set(KEY_EDITABLE, editable);
     }
 }

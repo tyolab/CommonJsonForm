@@ -89,6 +89,9 @@ public class DataJson extends GenericJson {
     }
 
     public String getString(String key) {
+        if (!containsKey(key))
+            return null;
+
         Object value = get(key);
         if (value instanceof String) {
             try {
@@ -162,7 +165,7 @@ public class DataJson extends GenericJson {
     public Object get(String key) {
         if (containsKey(key))
             return super.get(key);
-        return "";
+        return null;
     }
 
     protected void addListData(String name, Object data) {

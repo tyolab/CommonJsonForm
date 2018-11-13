@@ -30,6 +30,9 @@ public class JsonFormGroup {
     }
 
     public JsonFormField addField(JsonFormField field) {
+        if (null == fields)
+            fields = new ArrayList<>();
+
         fields.add(field);
         return field;
     }
