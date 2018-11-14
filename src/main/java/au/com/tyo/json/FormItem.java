@@ -22,4 +22,7 @@ package au.com.tyo.json;
 
 public interface FormItem<K, V> extends FormBasicItem<K, V> {
 
+    boolean isEditable();
+
+    String getTitle();
 }
