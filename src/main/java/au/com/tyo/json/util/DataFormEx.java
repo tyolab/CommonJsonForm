@@ -54,11 +54,14 @@ public class DataFormEx extends DataJson {
             putInOrder(title, value);
         }
 
-        // @Override
-        // public Object get(int pos) {
-        //     String keyStr = getOrderedKeys().get(pos);
-        //     return super.get(pos);
-        // }
+    }
+
+    public void addHeader(int headerResId) {
+        set(KEY_HEADER, headerResId);
+    }
+
+    public void addFooter(int footerResId) {
+        set(KEY_FOOTER, footerResId);
     }
 
     public void addGroup(Map group) {
