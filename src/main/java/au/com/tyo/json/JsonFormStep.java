@@ -12,6 +12,12 @@ import java.util.List;
 
 public class JsonFormStep extends JsonFormGroup {
 
+    @Key
+    public Object header;
+
+    @Key
+    public Object footer;
+
     /**
      * Groups with fields
      */
