@@ -93,8 +93,12 @@ public class DataJson extends GenericJson {
     }
 
     public String getString(String key) {
+        return getString(key, null);
+    }
+
+    public String getString(String key, String alternative) {
         if (!containsKey(key))
-            return null;
+            return alternative;
 
         Object value = get(key);
         if (value instanceof String) {
@@ -253,13 +257,13 @@ public class DataJson extends GenericJson {
     }
 
     public boolean getBoolean(String key) {
-        return getBoolean(this, key);
+        return getBoolean(this, key, false);
     }
 
-    public static boolean getBoolean(Map map, String key) {
+    public static boolean getBoolean(Map map, String key, boolean alternative) {
         Object value = map.get(key);
         if (null == value)
-            return false;
+            return alternative;
 
         if (value instanceof Boolean)
             return (boolean) value;
@@ -271,5 +275,9 @@ public class DataJson extends GenericJson {
     @Override
     public String toString() {
         return JsonBase.toJson(this);
+    }
+
+    public boolean getBoolean(String key, boolean b) {
+        return getBoolean(this, key, b);
     }
 }
