@@ -89,11 +89,11 @@ public class DataFormEx extends DataJson {
     }
 
     public int getFooter() {
-        return getInt(KEY_FOOTER);
+        return getInt(KEY_FOOTER, -1);
     }
 
     public int getHeader() {
-        return getInt(KEY_HEADER);
+        return getInt(KEY_HEADER, -1);
     }
 
     public void setFormEditable(boolean editable) {

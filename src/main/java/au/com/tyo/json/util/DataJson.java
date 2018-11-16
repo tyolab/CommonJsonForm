@@ -84,6 +84,10 @@ public class DataJson extends GenericJson {
         return (int) getFloatString(key);
     }
 
+    public int getInt(String key, int alternative) {
+        return getInt(this, key, alternative);
+    }
+
     public int getInt(String key) {
         return getInt(this, key);
     }
