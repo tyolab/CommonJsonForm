@@ -50,7 +50,7 @@ public class DataFormEx extends DataJson {
             return getString(KEY_TITLE);
         }
 
-        public void addField(String title, String value) {
+        public void addField(String title, Object value) {
             putInOrder(title, value);
         }
 
