@@ -28,8 +28,8 @@ public class JsonFormFieldImageBox extends JsonFormField {
 
     @Key ArrayList images;
 
-    public JsonFormFieldImageBox(String key, String type) {
-        super(key, type);
+    public JsonFormFieldImageBox(String key) {
+        super(key);
     }
 
     public void addImage(String imageUrl) {

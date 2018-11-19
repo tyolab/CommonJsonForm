@@ -11,8 +11,8 @@ public class JsonFormFieldWithTitle extends JsonFormField {
     @Key
     public String title;
 
-    public JsonFormFieldWithTitle(String key, String type, String title) {
-        super(key, type);
+    public JsonFormFieldWithTitle(String key, String title) {
+        super(key);
         this.title = title;
     }
 

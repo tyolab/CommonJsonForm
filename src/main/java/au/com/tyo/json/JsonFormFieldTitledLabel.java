@@ -11,12 +11,12 @@ public class JsonFormFieldTitledLabel extends JsonFormFieldLabel {
     @Key
     public String title;
 
-    public JsonFormFieldTitledLabel(String key, String type, String title, String text) {
-        super(key, type, text);
+    public JsonFormFieldTitledLabel(String key, String title, String text) {
+        super(key, text);
         this.title = title;
     }
 
-    public JsonFormFieldTitledLabel(String key, String title, String text) {
-        this(key, Constants.JSON_FORM_WIDGET_KEY_LABEL, title, text);
+    public JsonFormFieldTitledLabel(String key, String title) {
+        this(key, title, null);
     }
 }

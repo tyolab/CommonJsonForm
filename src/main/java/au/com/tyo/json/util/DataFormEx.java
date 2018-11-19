@@ -78,7 +78,11 @@ public class DataFormEx extends FormGroup {
         return (Map) getMapData(KEY_META_MAP);
     }
 
-    public void setMeta(String key, Object value) {
-        getMapData(KEY_META_MAP).put(key, value);
+    public Object getMetaAttribute(String key, String attribute) {
+        return getMapData(getMapData(KEY_META_MAP), key).get(attribute);
+    }
+
+    public void setMetaAttribute(String key, String attribute, Object value) {
+        getMapData(getMapData(KEY_META_MAP), key).put(attribute, value);
     }
 }

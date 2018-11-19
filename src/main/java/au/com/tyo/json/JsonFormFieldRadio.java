@@ -7,7 +7,7 @@ package au.com.tyo.json;
 public class JsonFormFieldRadio extends JsonFormFieldOptions {
 
     public JsonFormFieldRadio(String key, String hint) {
-        super(key, "radio", hint);
+        super(key, hint);
     }
 
     public void check(String check, String alt) {

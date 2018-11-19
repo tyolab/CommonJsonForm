@@ -11,8 +11,8 @@ public class JsonFormFieldWithHint extends JsonFormField {
     @Key
     public String hint;
 
-    public JsonFormFieldWithHint(String key, String type, String hint) {
-        super(key, type);
+    public JsonFormFieldWithHint(String key, String hint) {
+        super(key);
         this.hint = hint;
     }
 

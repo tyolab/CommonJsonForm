@@ -6,11 +6,7 @@ package au.com.tyo.json;
 
 public class JsonFormFieldSwitch extends JsonFormFieldTitledLabel {
 
-    public JsonFormFieldSwitch(String key, String type, String title) {
-        super(key, type, title, "");
-    }
-
     public JsonFormFieldSwitch(String key, String title) {
-        super(key, Constants.JSON_FORM_WIDGET_KEY_SWITCH, title, "");
+        super(key,title, "");
     }
 }

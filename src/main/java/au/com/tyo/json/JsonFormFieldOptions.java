@@ -17,8 +17,8 @@ public class JsonFormFieldOptions extends JsonFormField {
     @Key
     public List<JsonFormFieldOption> options;
 
-    public JsonFormFieldOptions(String key, String type, String hint) {
-        super(key, type);
+    public JsonFormFieldOptions(String key, String hint) {
+        super(key);
         this.label = hint;
     }
 

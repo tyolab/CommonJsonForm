@@ -9,7 +9,7 @@ import java.util.List;
 public class JsonFormFieldCheckBox extends JsonFormFieldOptions {
 
     public JsonFormFieldCheckBox(String key, String hint) {
-        super(key, "check_box", hint);
+        super(key, hint);
     }
 
     public JsonFormFieldOption addOption(String key, String text, boolean value) {
