@@ -3,7 +3,7 @@ package au.com.tyo.json.util;
 import java.util.List;
 import java.util.Map;
 
-public class DataFormEx extends DataJson {
+public class DataFormEx extends FormGroup {
 
     /**
      * Static header
@@ -22,38 +22,14 @@ public class DataFormEx extends DataJson {
 
     public static final String KEY_GROUPS = "$groups";
 
-    public static final String KEY_TITLE = "$title";
+    public static final String KEY_META_MAP = "$meta";
 
-    public static final String KEY_EDITABLE = "$editable";
+    public DataFormEx(String title) {
+        super(title);
+    }
 
-    public static class FormGroup extends OrderedDataMap {
-
-        private boolean showingGroupTitle = false;
-
-        public boolean isShowingGroupTitle() {
-            return showingGroupTitle;
-        }
-
-        public void setShowingGroupTitle(boolean showingGroupTitle) {
-            this.showingGroupTitle = showingGroupTitle;
-        }
-
-        public FormGroup(String title) {
-            setTitle(title);
-        }
-
-        public void setTitle(String title) {
-            set(KEY_TITLE, title);
-        }
-
-        public String getTitle() {
-            return getString(KEY_TITLE);
-        }
-
-        public void addField(String title, Object value) {
-            putInOrder(title, value);
-        }
-
+    public DataFormEx() {
+        super();
     }
 
     public void addHeader(int headerResId) {
@@ -96,7 +72,13 @@ public class DataFormEx extends DataJson {
         return getInt(KEY_HEADER, -1);
     }
 
-    public void setFormEditable(boolean editable) {
-        set(KEY_EDITABLE, editable);
+    public Map getMetaMap() {
+        if (!containsKey(KEY_META_MAP))
+            return null;
+        return (Map) getMapData(KEY_META_MAP);
+    }
+
+    public void setMeta(String key, Object value) {
+        getMapData(KEY_META_MAP).put(key, value);
     }
 }

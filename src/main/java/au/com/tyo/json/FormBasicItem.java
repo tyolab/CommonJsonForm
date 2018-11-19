@@ -37,4 +37,5 @@ public interface FormBasicItem<K, V> extends Map<K, V> {
 
     Object getValue(String key);
 
+    boolean isEditable();
 }
