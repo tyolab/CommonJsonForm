@@ -6,6 +6,7 @@ import java.util.List;
 public class OrderedDataMap extends DataJson {
 
     private List<String> orderedKeys;
+    private List         values;
 
     /**
      * The put method won't keep the entry in order
@@ -19,8 +20,13 @@ public class OrderedDataMap extends DataJson {
             if (null == orderedKeys)
                 orderedKeys = new ArrayList<>();
 
-            if (!containsKey(key))
+            if (!containsKey(key)) {
                 orderedKeys.add(key);
+
+                if (null == values)
+                    values = new ArrayList();
+                values.add(value);
+            }
         }
         else
             throw new IllegalArgumentException("Key cannot contain special character $");
@@ -43,5 +49,9 @@ public class OrderedDataMap extends DataJson {
 
     public String getKey(int pos) {
         return orderedKeys.get(pos);
+    }
+
+    public List getOrderedValues() {
+        return values;
     }
 }
