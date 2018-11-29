@@ -3,6 +3,8 @@ package au.com.tyo.json.util;
 import au.com.tyo.json.JsonFormField;
 import au.com.tyo.json.JsonFormFieldWithTitle;
 
+import static au.com.tyo.json.JsonFormField.VALUE_REQUIRED;
+
 public class FormGroup extends FormData {
 
     public FormGroup(String title) {
@@ -24,21 +26,27 @@ public class FormGroup extends FormData {
         putInOrder(key, formField);
     }
 
-    public void addTitledJsonFormField(String title, String type) {
-        addTitledJsonFormField(title, type, null, false);
+    public JsonFormField addTitledJsonFormField(String title, String type) {
+        return addTitledJsonFormField(title, type, null, false);
     }
 
-    public void addTitledJsonFormField(String title, String value, String type, boolean clickable) {
-        addTitledJsonFormField(toKey(title), title, value, type, clickable);
+    public JsonFormField addTitledJsonFormField(String title, String value, String type, boolean clickable) {
+        return addTitledJsonFormField(toKey(title), title, value, type, clickable);
     }
 
-    public void addTitledJsonFormField(String key, String title, String value, String type, boolean clickable) {
+    public JsonFormField addTitledJsonFormField(String key, String title, String value, String type, boolean clickable) {
+        return addTitledJsonFormField(key, title, value, type, clickable, VALUE_REQUIRED);
+    }
+
+    public JsonFormField addTitledJsonFormField(String key, String title, String value, String type, boolean clickable, int required) {
         JsonFormField jsonFormField = new JsonFormFieldWithTitle(key, title);
         jsonFormField.type = type;
         jsonFormField.value = value;
         jsonFormField.clickable = clickable;
+        jsonFormField.required = required;
 
         addField(key, title, jsonFormField);
+        return jsonFormField;
     }
 
     public void addField(JsonFormFieldWithTitle jsonFormField) {
