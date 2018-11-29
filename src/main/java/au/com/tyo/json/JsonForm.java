@@ -35,6 +35,12 @@ public class JsonForm extends JsonBase implements FormState {
     @Key
     public String title = "";
 
+    /**
+     * Form Id
+     */
+    @Key
+    public String id;
+
     private FormState.State formState;
 
     public JsonForm(String title) {
