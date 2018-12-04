@@ -3,6 +3,7 @@ package au.com.tyo.json.util;
 import au.com.tyo.json.JsonFormField;
 import au.com.tyo.json.JsonFormFieldWithTitle;
 
+import static au.com.tyo.json.JsonFormField.VALUE_NULLABLE;
 import static au.com.tyo.json.JsonFormField.VALUE_REQUIRED;
 
 public class FormGroup extends FormData {
@@ -35,7 +36,7 @@ public class FormGroup extends FormData {
     }
 
     public JsonFormField addTitledJsonFormField(String key, String title, String value, String type, boolean clickable) {
-        return addTitledJsonFormField(key, title, value, type, clickable, VALUE_REQUIRED);
+        return addTitledJsonFormField(key, title, value, type, clickable, VALUE_NULLABLE);
     }
 
     public JsonFormField addTitledJsonFormField(String key, String title, String value, String type, boolean clickable, int required) {

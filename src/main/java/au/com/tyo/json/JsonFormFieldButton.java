@@ -39,6 +39,8 @@ public class JsonFormFieldButton extends JsonFormFieldTitledLabel {
 
         if (hint.equals(REQUIRED))
             required = VALUE_REQUIRED;
+        else
+            required = VALUE_NULLABLE;
 
         this.clickable = true;
     }
