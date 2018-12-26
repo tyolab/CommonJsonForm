@@ -35,6 +35,10 @@ public class OrderedDataMap extends DataJson {
     }
 
     public Object get(int pos) {
+        return getValue(pos);
+    }
+
+    public Object getValue(int pos) {
         return get(orderedKeys.get(pos));
     }
 

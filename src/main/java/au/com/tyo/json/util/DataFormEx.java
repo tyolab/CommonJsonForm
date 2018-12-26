@@ -20,9 +20,20 @@ public class DataFormEx extends FormGroup {
      */
     public static final String KEY_FOOTER = "$footer";
 
+    /**
+     *
+     */
     public static final String KEY_GROUPS = "$groups";
 
+    /**
+     *
+     */
     public static final String KEY_META_MAP = "$meta";
+
+    /**
+     *
+     */
+    public static final String KEY_ID = "$id";
 
     public DataFormEx(String title) {
         super(title);
@@ -30,6 +41,12 @@ public class DataFormEx extends FormGroup {
 
     public DataFormEx() {
         super();
+    }
+
+    public DataFormEx(OrderedDataMap orderedDataMap) {
+        for (int i = 0; i < orderedDataMap.size(); ++i) {
+            putInOrder(orderedDataMap.getKey(i), orderedDataMap.getValue(i));
+        }
     }
 
     public void addHeader(int headerResId) {
@@ -85,4 +102,13 @@ public class DataFormEx extends FormGroup {
     public void setMetaAttribute(String key, String attribute, Object value) {
         getMapData(getMapData(KEY_META_MAP), key).put(attribute, value);
     }
+
+    public String getFormId() {
+        return getString(KEY_ID);
+    }
+
+    public void setFormId(String id) {
+        set(KEY_ID, id);
+    }
+
 }
