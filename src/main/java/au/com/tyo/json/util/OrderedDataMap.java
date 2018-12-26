@@ -3,10 +3,10 @@ package au.com.tyo.json.util;
 import java.util.ArrayList;
 import java.util.List;
 
-public class OrderedDataMap extends DataJson {
+public class OrderedDataMap<ValueType> extends DataJson {
 
-    private List<String> orderedKeys;
-    private List         values;
+    private List<String>            orderedKeys;
+    private List<ValueType>         values;
 
     /**
      * The put method won't keep the entry in order
@@ -14,7 +14,7 @@ public class OrderedDataMap extends DataJson {
      * @param key
      * @param value
      */
-    public void putInOrder(String key, Object value) {
+    public void putInOrder(String key, ValueType value) {
 
         if (null != key && key.charAt(0) != '$') {
             if (null == orderedKeys)
@@ -38,8 +38,8 @@ public class OrderedDataMap extends DataJson {
         return getValue(pos);
     }
 
-    public Object getValue(int pos) {
-        return get(orderedKeys.get(pos));
+    public ValueType getValue(int pos) {
+        return (ValueType) get(orderedKeys.get(pos));
     }
 
     @Override
@@ -57,5 +57,10 @@ public class OrderedDataMap extends DataJson {
 
     public List getOrderedValues() {
         return values;
+    }
+
+    public void append(OrderedDataMap<ValueType> orderedDataMap) {
+        for (int i = 0; i < orderedDataMap.size(); ++i)
+            putInOrder(orderedDataMap.getKey(i), orderedDataMap.getValue(i));
     }
 }
