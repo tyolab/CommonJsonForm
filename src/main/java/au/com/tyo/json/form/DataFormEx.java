@@ -91,6 +91,14 @@ public class DataFormEx extends FormGroup {
         return getInt(KEY_HEADER, -1);
     }
 
+    public void setHeader(int headerResId) {
+        put(KEY_HEADER, headerResId);
+    }
+
+    public void setFooter(int footerResId) {
+        put(KEY_FOOTER, footerResId);
+    }
+
     public Map getMetaMap() {
         if (!containsKey(KEY_META_MAP))
             return null;

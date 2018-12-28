@@ -14,6 +14,8 @@ public class FormField implements FieldHeader, FieldValue {
 
     private Object value;
 
+    private String type;
+
     public FormField(String key, String title, Object value) {
         setKey(key);
         setTitle(title);
@@ -44,6 +46,10 @@ public class FormField implements FieldHeader, FieldValue {
 
     public Object getValue() {
         return value; // get(KEY_VALUE);
+    }
+
+    public void setType(String type) {
+        this.type = type;
     }
 
     /**
@@ -89,5 +95,9 @@ public class FormField implements FieldHeader, FieldValue {
             sb.append(tokens[i].substring(1));
         }
         return sb.toString();
+    }
+
+    public String getType() {
+        return type;
     }
 }

@@ -41,11 +41,16 @@ public class OrderedDataMap<ValueType> extends DataJson {
     }
 
     public ValueType getValue(int pos) {
+        if (pos < 0 || pos >= sizeOfOrder())
+            throw new IllegalArgumentException("The position of the item can't be negative or greater than the size of order " + sizeOfOrder());
         return (ValueType) get(orderedKeys.get(pos));
     }
 
-    @Override
     public int size() {
+        return sizeOfOrder();
+    }
+
+    public int sizeOfOrder() {
         return null != orderedKeys ? orderedKeys.size() : 0;
     }
 

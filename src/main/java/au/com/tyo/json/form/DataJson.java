@@ -101,6 +101,9 @@ public class DataJson extends GenericJson {
             return alternative;
 
         Object value = get(key);
+        if (null == value)
+            return null;
+
         if (value instanceof String) {
             try {
                 return (String) value;
