@@ -3,6 +3,8 @@ package au.com.tyo.json.util;
 import java.util.ArrayList;
 import java.util.List;
 
+import au.com.tyo.json.form.DataJson;
+
 public class OrderedDataMap<ValueType> extends DataJson {
 
     private List<String>            orderedKeys;
@@ -44,7 +46,7 @@ public class OrderedDataMap<ValueType> extends DataJson {
 
     @Override
     public int size() {
-        return orderedKeys.size();
+        return null != orderedKeys ? orderedKeys.size() : 0;
     }
 
     public List<String> getOrderedKeys() {
@@ -62,5 +64,9 @@ public class OrderedDataMap<ValueType> extends DataJson {
     public void append(OrderedDataMap<ValueType> orderedDataMap) {
         for (int i = 0; i < orderedDataMap.size(); ++i)
             putInOrder(orderedDataMap.getKey(i), orderedDataMap.getValue(i));
+    }
+
+    public void putInOrder(OrderedDataMap<ValueType> orderedDataMap) {
+        append(orderedDataMap);
     }
 }
