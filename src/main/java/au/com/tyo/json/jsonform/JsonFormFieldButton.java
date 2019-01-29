@@ -42,7 +42,7 @@ public class JsonFormFieldButton extends JsonFormFieldTitledLabel {
         else
             required = VALUE_NULLABLE;
 
-        this.clickable = true;
+        this.clickable = 1;
     }
 
     public JsonFormFieldButton(String key, String title, int pickType) {

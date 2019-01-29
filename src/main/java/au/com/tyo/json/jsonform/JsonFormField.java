@@ -14,6 +14,10 @@ public class JsonFormField implements Comparable<JsonFormField> {
     public static final int VALUE_OPTIONAL = 0;
     public static final int VALUE_REQUIRED = 1;
 
+    public static final int CLICKABLE_NONE = 0;
+    public static final int CLICKABLE_FIELD = 1;
+    public static final int CLICKABLE_ROW = 2;
+
     /**
      *
      */
@@ -59,15 +63,19 @@ public class JsonFormField implements Comparable<JsonFormField> {
 
     /**
      * Response to mouse click event
+     *
+     * 0, false
+     * 1, true
+     * 2, clickable on row level
      */
     @Key
-    public boolean clickable;
+    public int clickable;
 
     public JsonFormField(String key, String type, boolean required) {
         this.key = key;
         this.type = type;
         this.required = required ? VALUE_REQUIRED : VALUE_NULLABLE;
-        this.clickable = false;
+        this.clickable = 0;
 
         if (null == type)
             throw new IllegalStateException(this.getClass().getSimpleName() + ": widget type cannot not be null");

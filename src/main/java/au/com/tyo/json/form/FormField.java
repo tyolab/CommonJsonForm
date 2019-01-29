@@ -1,7 +1,5 @@
 package au.com.tyo.json.form;
 
-import au.com.tyo.json.form.FieldValue;
-
 public class FormField implements FieldHeader, FieldValue {
 
     public static final String KEY_KEY = "$key";
@@ -15,6 +13,8 @@ public class FormField implements FieldHeader, FieldValue {
     private Object value;
 
     private String type;
+
+    private int clickable = 0;
 
     public FormField(String key, String title, Object value) {
         setKey(key);
@@ -99,5 +99,13 @@ public class FormField implements FieldHeader, FieldValue {
 
     public String getType() {
         return type;
+    }
+
+    public int isClickable() {
+        return clickable;
+    }
+
+    public void setClickable(int clickable) {
+        this.clickable = clickable;
     }
 }
