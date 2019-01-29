@@ -35,15 +35,15 @@ public class FormGroup extends FormData {
         return addTitledJsonFormField(title, type, null, false);
     }
 
-    public JsonFormField addTitledJsonFormField(String title, String value, String type, boolean clickable) {
+    public JsonFormField addTitledJsonFormField(String title, String value, String type, int clickable) {
         return addTitledJsonFormField(FormField.toKey(title), title, value, type, clickable);
     }
 
-    public JsonFormField addTitledJsonFormField(String key, String title, String value, String type, boolean clickable) {
+    public JsonFormField addTitledJsonFormField(String key, String title, String value, String type, int clickable) {
         return addTitledJsonFormField(key, title, value, type, clickable, VALUE_NULLABLE);
     }
 
-    public JsonFormField addTitledJsonFormField(String key, String title, String value, String type, boolean clickable, int required) {
+    public JsonFormField addTitledJsonFormField(String key, String title, String value, String type, int clickable, int required) {
         JsonFormField jsonFormField = new JsonFormFieldWithTitle(key, title);
         jsonFormField.type = type;
         jsonFormField.value = value;

@@ -61,7 +61,7 @@ public class JsonFormField implements Comparable<JsonFormField> {
      * Response to mouse click event
      */
     @Key
-    public boolean clickable;
+    public int clickable;
 
     public JsonFormField(String key, String type, boolean required) {
         this.key = key;
