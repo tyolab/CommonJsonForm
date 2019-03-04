@@ -22,23 +22,25 @@ public class FormGroup extends FormData {
         this(null);
     }
 
-    public void addField(String title, Object value) {
-        addField(title, value, 0);
+    public FormField addField(String title, Object value) {
+        return addField(title, value, 0);
     }
 
-    public void addField(String title, Object value, int clickable) {
-        addField(FormField.toKey(title), title, value, clickable);
+    public FormField addField(String title, Object value, int clickable) {
+        return addField(FormField.toKey(title), title, value, clickable);
     }
 
-    public void addField(String key, String title, boolean value) {
-        addField(key, title, value, CLICKABLE_FIELD);
+    public FormField addField(String key, String title, boolean value) {
+        return addField(key, title, value, CLICKABLE_FIELD);
     }
 
-    public void addField(String key, String title, Object value, int clickable) {
+    public FormField addField(String key, String title, Object value, int clickable) {
         FormField formField = new FormField(key, title, value);
         formField.setClickable(clickable);
 
         putInOrder(key, formField);
+
+        return formField;
     }
 
     public JsonFormField addTitledJsonFormField(String title, String type) {

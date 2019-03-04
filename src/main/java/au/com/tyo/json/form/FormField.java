@@ -15,11 +15,13 @@ public class FormField implements FieldHeader, FieldValue {
     private String type;
 
     private int clickable = 0;
+    private boolean enabled;
 
     public FormField(String key, String title, Object value) {
         setKey(key);
         setTitle(title);
         setValue(value);
+        setEnabled(true);
     }
 
     public String getTitle() {
@@ -107,5 +109,13 @@ public class FormField implements FieldHeader, FieldValue {
 
     public void setClickable(int clickable) {
         this.clickable = clickable;
+    }
+
+    public void setEnabled(boolean enabled) {
+        this.enabled = enabled;
+    }
+
+    public boolean isEnabled() {
+        return enabled;
     }
 }

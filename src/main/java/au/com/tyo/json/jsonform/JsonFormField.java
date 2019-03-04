@@ -71,11 +71,19 @@ public class JsonFormField implements Comparable<JsonFormField> {
     @Key
     public int clickable;
 
+    /**
+     * If it is the field enabled
+     * for EditText, is it editable
+     */
+    @Key
+    public boolean enabled;
+
     public JsonFormField(String key, String type, boolean required) {
         this.key = key;
         this.type = type;
         this.required = required ? VALUE_REQUIRED : VALUE_NULLABLE;
         this.clickable = 0;
+        this.enabled = true; // by default, yes
 
         if (null == type)
             throw new IllegalStateException(this.getClass().getSimpleName() + ": widget type cannot not be null");
