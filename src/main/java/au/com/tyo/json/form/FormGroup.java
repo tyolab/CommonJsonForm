@@ -16,6 +16,7 @@ public class FormGroup extends FormData {
         super();
         setTitle(title);
         setShowingTitle(showTitle);
+        setShowingTitle(true);
     }
 
     public FormGroup() {

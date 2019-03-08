@@ -78,6 +78,14 @@ public class JsonFormField implements Comparable<JsonFormField> {
     @Key
     public boolean enabled;
 
+    /**
+     * The resource for generating the field layout
+     *
+     * e.g. in Android, layout = R.layout.field_awesome
+     */
+    @Key
+    public int layout;
+
     public JsonFormField(String key, String type, boolean required) {
         this.key = key;
         this.type = type;
