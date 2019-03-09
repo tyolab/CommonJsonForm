@@ -1,6 +1,6 @@
 package au.com.tyo.json.form;
 
-public class FormField implements FieldHeader, FieldValue {
+public class FormField extends FormData implements FieldHeader, FieldValue {
 
     public static final String KEY_KEY = "$key";
 
@@ -17,11 +17,14 @@ public class FormField implements FieldHeader, FieldValue {
     private int clickable = 0;
     private boolean enabled;
 
+    private int layout;
+
     public FormField(String key, String title, Object value) {
         setKey(key);
         setTitle(title);
         setValue(value);
         setEnabled(true);
+        setLayout(-1);
     }
 
     public String getTitle() {
@@ -117,5 +120,13 @@ public class FormField implements FieldHeader, FieldValue {
 
     public boolean isEnabled() {
         return enabled;
+    }
+
+    public int getLayout() {
+        return layout;
+    }
+
+    public void setLayout(int layout) {
+        this.layout = layout;
     }
 }

@@ -10,6 +10,10 @@ class FormData extends OrderedDataMap {
 
     public static final String KEY_TITLE = "$title";
 
+    public static final String KEY_LAYOUT = "$layout";
+
+    public static final String KEY_LAYOUT_TITLE = "$layout_title";
+
     private boolean showingTitle = false;
 
     public boolean isShowingTitle() {
@@ -44,4 +48,27 @@ class FormData extends OrderedDataMap {
         return getBoolean(KEY_LOCKED, false);
     }
 
+    public void setLayout(int layout) {
+        put(KEY_LAYOUT, layout);
+    }
+
+    public int getLayout() {
+        return getInt(KEY_LAYOUT, -1);
+    }
+
+    public boolean hasLayout() {
+        return containsKey(KEY_LAYOUT);
+    }
+
+    public void setTitleLayout(int layout) {
+        put(KEY_LAYOUT_TITLE, layout);
+    }
+
+    public int getTitleLayout() {
+        return getInt(KEY_LAYOUT_TITLE, -1);
+    }
+
+    public boolean hasTitleLayout() {
+        return containsKey(KEY_LAYOUT_TITLE);
+    }
 }

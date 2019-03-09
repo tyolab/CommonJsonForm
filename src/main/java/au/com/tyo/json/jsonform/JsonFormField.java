@@ -18,6 +18,17 @@ public class JsonFormField implements Comparable<JsonFormField> {
     public static final int CLICKABLE_FIELD = 1;
     public static final int CLICKABLE_ROW = 2;
 
+    public static final String ATTRIBUTE_NAME_LAYOUT = "layout";
+    public static final String ATTRIBUTE_NAME_CLICKABLE = "clickable";
+    public static final String ATTRIBUTE_NAME_VISIBLE = "visible";
+    public static final String ATTRIBUTE_NAME_VALUE = "value";
+    public static final String ATTRIBUTE_NAME_ORIENTATION = "orientation";
+    public static final String ATTRIBUTE_NAME_REQUIRED = "required";
+    public static final String ATTRIBUTE_NAME_ENABLED = "enabled";
+    public static final String ATTRIBUTE_NAME_KEY = "key";
+    public static final String ATTRIBUTE_NAME_TITLE = "title";
+    public static final String ATTRIBUTE_NAME_ = "";
+
     /**
      *
      */

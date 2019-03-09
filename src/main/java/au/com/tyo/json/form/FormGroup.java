@@ -74,4 +74,5 @@ public class FormGroup extends FormData {
     public void addField(JsonFormField jsonFormField) {
         addField(jsonFormField.key, FormField.toTitle(jsonFormField.key), jsonFormField, jsonFormField.clickable);
     }
+
 }
