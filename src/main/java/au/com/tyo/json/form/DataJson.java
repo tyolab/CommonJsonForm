@@ -226,6 +226,16 @@ public class DataJson extends GenericJson {
         return map;
     }
 
+    public static int increaseIntBy(Map map, String key) {
+        return increaseIntBy(map, key, 1);
+    }
+
+    public static int increaseIntBy(Map map, String key, int by) {
+        int value = getInt(map, key, 0) + by;
+        map.put(key, value);
+        return value;
+    }
+
     public static int getInt(Map map, String key) {
         return getInt(map, key, 0);
     }
