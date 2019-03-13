@@ -28,6 +28,7 @@ public class JsonFormField implements Comparable<JsonFormField> {
     public static final String ATTRIBUTE_NAME_KEY = "key";
     public static final String ATTRIBUTE_NAME_TITLE = "title";
     public static final String ATTRIBUTE_NAME_TYPE = "type";
+    public static final String ATTRIBUTE_NAME_SEPARATOR_UNDER = "separator_under";
 
     /**
      *
@@ -96,6 +97,12 @@ public class JsonFormField implements Comparable<JsonFormField> {
      */
     @Key
     public int layout;
+
+    /**
+     * Indicate if there is separator / divider under
+     */
+    @Key
+    public boolean separator_under = true;
 
     public JsonFormField(String key, String type, boolean required) {
         this.key = key;

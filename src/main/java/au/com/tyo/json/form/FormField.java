@@ -1,5 +1,7 @@
 package au.com.tyo.json.form;
 
+import au.com.tyo.json.Config;
+
 public class FormField extends FormData implements FieldHeader, FieldValue {
 
     public static final String KEY_KEY = "$key";
@@ -19,12 +21,15 @@ public class FormField extends FormData implements FieldHeader, FieldValue {
 
     private int layout;
 
+    private boolean withSeparator;
+
     public FormField(String key, String title, Object value) {
         setKey(key);
         setTitle(title);
         setValue(value);
         setEnabled(true);
         setLayout(-1);
+        setWithSeparator(Config.formWithSeparator);
     }
 
     public String getTitle() {
@@ -128,5 +133,13 @@ public class FormField extends FormData implements FieldHeader, FieldValue {
 
     public void setLayout(int layout) {
         this.layout = layout;
+    }
+
+    public boolean hasSeparator() {
+        return withSeparator;
+    }
+
+    public void setWithSeparator(boolean withSparator) {
+        this.withSeparator = withSparator;
     }
 }
