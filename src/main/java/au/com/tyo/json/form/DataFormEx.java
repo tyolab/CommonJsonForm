@@ -121,4 +121,10 @@ public class DataFormEx extends FormGroup {
         set(KEY_ID, id);
     }
 
+    /**
+     * Initialize the form
+     */
+    public void initialize() {
+        // no ops yet
+    }
 }
