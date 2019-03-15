@@ -37,6 +37,8 @@ public class DataFormEx extends FormGroup {
      */
     public static final String KEY_ID = "$id";
 
+    protected boolean initialized = false;
+
     public DataFormEx(String title) {
         super(title);
     }
@@ -49,6 +51,14 @@ public class DataFormEx extends FormGroup {
         for (int i = 0; i < orderedDataMap.size(); ++i) {
             putInOrder(orderedDataMap.getKey(i), orderedDataMap.getValue(i));
         }
+    }
+
+    public boolean isInitialized() {
+        return initialized;
+    }
+
+    public void setInitialized(boolean initialized) {
+        this.initialized = initialized;
     }
 
     public void addHeader(int headerResId) {
@@ -123,8 +133,9 @@ public class DataFormEx extends FormGroup {
 
     /**
      * Initialize the form
+     *
      */
-    public void initialize() {
+    public void initializeForm() {
         // no ops yet
     }
 }
