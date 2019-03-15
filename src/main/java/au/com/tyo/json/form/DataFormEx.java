@@ -1,5 +1,6 @@
 package au.com.tyo.json.form;
 
+import java.util.Collection;
 import java.util.List;
 import java.util.Map;
 
@@ -51,6 +52,11 @@ public class DataFormEx extends FormGroup {
         for (int i = 0; i < orderedDataMap.size(); ++i) {
             putInOrder(orderedDataMap.getKey(i), orderedDataMap.getValue(i));
         }
+    }
+
+    public DataFormEx(Map<String, Object> data) {
+        Collection<Entry<String, Object>> set = data.entrySet();
+
     }
 
     public boolean isInitialized() {
