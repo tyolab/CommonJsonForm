@@ -48,15 +48,18 @@ public class DataFormEx extends FormGroup {
         super();
     }
 
-    public DataFormEx(OrderedDataMap orderedDataMap) {
-        for (int i = 0; i < orderedDataMap.size(); ++i) {
-            putInOrder(orderedDataMap.getKey(i), orderedDataMap.getValue(i));
-        }
-    }
-
     public DataFormEx(Map<String, Object> data) {
-        Collection<Entry<String, Object>> set = data.entrySet();
-
+        if (data instanceof OrderedDataMap) {
+            OrderedDataMap orderedDataMap = (OrderedDataMap) data;
+            for (int i = 0; i < orderedDataMap.size(); ++i) {
+                putInOrder(orderedDataMap.getKey(i), orderedDataMap.getValue(i));
+            }
+        }
+        else {
+            Collection<Entry<String, Object>> set = data.entrySet();
+            for (Entry<String, Object> entry : set)
+                put(entry.getKey(), entry.getValue());
+        }
     }
 
     public boolean isInitialized() {
