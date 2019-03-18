@@ -14,8 +14,17 @@ public class JsonFormFieldOption {
     @Key
     public String text;
 
+    @Key
+    public String value;
+
     public JsonFormFieldOption(String key, String text) {
         this.key = key;
         this.text = text;
+    }
+
+    public JsonFormFieldOption(String key, String text, String value) {
+        this.key = key;
+        this.text = text;
+        this.value = value;
     }
 }
