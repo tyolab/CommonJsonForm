@@ -40,6 +40,8 @@ public class DataFormEx extends FormGroup {
 
     protected boolean initialized = false;
 
+    private Map formData = null;
+
     public DataFormEx(String title) {
         super(title);
     }
@@ -80,6 +82,34 @@ public class DataFormEx extends FormGroup {
 
     public void addGroup(Map group) {
         addListData(KEY_GROUPS, group);
+
+        if (null != formData)
+            absorbData(group);
+    }
+
+    private void absorbData(FormField formField) {
+        formData.put(formField.getKey(), formField.getValue());
+    }
+
+    private void absorbData(Entry<String, Object> entry) {
+        formData.put(entry.getKey(), entry.getValue());
+    }
+
+    private void absorbData(Map group) {
+        if (group instanceof FormGroup) {
+            FormGroup formGroup = (FormGroup) group;
+            for (int i = 0; i < formGroup.sizeOfOrder(); ++i)
+                absorbData((FormField) formGroup.get(i));
+        }
+        else {
+            Collection<Entry<String, Object>> set = group.entrySet();
+            for (Entry<String, Object> entry : set) {
+                if (entry.getValue() instanceof FormField)
+                    absorbData((FormField) entry.getValue());
+                else
+                    absorbData(entry);
+            }
+        }
     }
 
     public List getGroups() {
@@ -147,4 +177,17 @@ public class DataFormEx extends FormGroup {
     public void initializeForm() {
         // no ops yet
     }
+
+    /**
+     * The copy of the actual data excluding the all meta keys/data
+     * @return
+     */
+    public Map getFormData() {
+        return formData;
+    }
+
+    public void setFormData(Map formData) {
+        this.formData = formData;
+    }
+
 }

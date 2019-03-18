@@ -111,8 +111,8 @@ public class JsonFormField implements Comparable<JsonFormField> {
         this.clickable = 0;
         this.enabled = true; // by default, yes
 
-        if (null == type)
-            throw new IllegalStateException(this.getClass().getSimpleName() + ": widget type cannot not be null");
+        // if (null == type)
+        //     throw new IllegalStateException(this.getClass().getSimpleName() + ": widget type cannot not be null");
     }
 
     public JsonFormField(String key) {
