@@ -11,11 +11,16 @@ import java.util.List;
 
 public class JsonFormFieldOptions extends JsonFormField {
 
+    public static final String ATTRIBUTE_NAME_TITLE_LAYOUT = "title_layout";
+
     @Key
     public String label = "";
 
     @Key
     public List<JsonFormFieldOption> options;
+
+    @Key
+    public int title_layout = -1;
 
     public JsonFormFieldOptions(String key, String hint) {
         super(key);

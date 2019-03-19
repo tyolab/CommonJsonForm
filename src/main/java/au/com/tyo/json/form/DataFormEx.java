@@ -4,9 +4,14 @@ import java.util.Collection;
 import java.util.List;
 import java.util.Map;
 
+import au.com.tyo.json.jsonform.JsonFormField;
 import au.com.tyo.json.util.OrderedDataMap;
 
 public class DataFormEx extends FormGroup {
+
+    public static final String ABSORB_DATA_PREFIX_DEFAULT = "settings_key";
+
+    public static String absorbDataPrefix = ABSORB_DATA_PREFIX_DEFAULT;
 
     /**
      * Static header
@@ -87,12 +92,40 @@ public class DataFormEx extends FormGroup {
             absorbData(group);
     }
 
+    /**
+     * Only take the real setting data, not the metadata for the form building
+     *
+     * @param formField
+     */
     private void absorbData(FormField formField) {
-        formData.put(formField.getKey(), formField.getValue());
+        String keyStr = formField.getKey();
+        absorbData(keyStr, formField.getValue());
     }
 
+    /**
+     * Only take the real setting data, not the metadata for the form building
+     *
+     * @param entry
+     */
     private void absorbData(Entry<String, Object> entry) {
-        formData.put(entry.getKey(), entry.getValue());
+        absorbData(entry.getKey(), entry.getValue());
+    }
+
+    /**
+     * Only take the real setting data, not the metadata for the form building
+     *
+     * This behaviour is changeable by setting tht static member field: absorbDataPrefix
+     *
+     * @param keyStr
+     * @param data
+     */
+    private void absorbData(String keyStr, Object data) {
+        if (keyStr.startsWith(absorbDataPrefix)) {
+            if (data instanceof JsonFormField)
+                formData.put(keyStr, ((JsonFormField) data).value);
+            else
+                formData.put(keyStr, data);
+        }
     }
 
     private void absorbData(Map group) {
