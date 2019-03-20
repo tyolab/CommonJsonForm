@@ -15,6 +15,9 @@ public class JsonFormGroup {
     public String visible = "true";
 
     @Key
+    public String key;
+
+    @Key
     public boolean titleVisible ;
 
     public JsonFormGroup(String title) {

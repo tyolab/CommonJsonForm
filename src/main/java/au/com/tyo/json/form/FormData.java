@@ -10,6 +10,8 @@ class FormData extends OrderedDataMap {
 
     public static final String KEY_TITLE = "$title";
 
+    public static final String KEY_KEY = "$key";
+
     public static final String KEY_LAYOUT = "$layout";
 
     public static final String KEY_LAYOUT_TITLE = "$layout_title";
@@ -70,5 +72,17 @@ class FormData extends OrderedDataMap {
 
     public boolean hasTitleLayout() {
         return containsKey(KEY_LAYOUT_TITLE);
+    }
+
+    public void setKey(String keyStr) {
+        set(KEY_KEY, keyStr);
+    }
+
+    public String getKey() {
+        return getString(KEY_KEY);
+    }
+
+    public boolean hasKey() {
+        return containsKey(KEY_KEY);
     }
 }
