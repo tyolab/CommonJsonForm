@@ -92,6 +92,14 @@ public class DataJson extends GenericJson {
         return getInt(this, key);
     }
 
+    public long getLong(String key, long alternative) {
+        return getLong(this, key, alternative);
+    }
+
+    public long getLong(String key) {
+        return getLong(this, key);
+    }
+
     public String getString(String key) {
         return getString(key, null);
     }
@@ -267,6 +275,18 @@ public class DataJson extends GenericJson {
         }
 
         return alternative;
+    }
+
+    public static long getLong(Map map, String key) {
+        return getLong(map, key, 0);
+    }
+
+    public static long getLong(Map map, String key, long alternative) {
+        Object value = map.get(key);
+        if (value instanceof Long)
+            return (long) value;
+
+        return getInt(map, key, (int) alternative);
     }
 
     public boolean getBoolean(String key) {

@@ -34,7 +34,7 @@ public class JsonFormFieldOptions extends JsonFormField {
         return option;
     }
 
-    public JsonFormFieldOption addOption(String key, String text, String value) {
+    public JsonFormFieldOption addOption(String key, String text, Object value) {
         JsonFormFieldOption optionField = addOption(key, text);
         optionField.value = value;
         return optionField;
