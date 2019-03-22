@@ -4,6 +4,7 @@ import au.com.tyo.json.jsonform.JsonFormField;
 import au.com.tyo.json.jsonform.JsonFormFieldWithTitle;
 
 import static au.com.tyo.json.jsonform.JsonFormField.CLICKABLE_FIELD;
+import static au.com.tyo.json.jsonform.JsonFormField.CLICKABLE_NONE;
 import static au.com.tyo.json.jsonform.JsonFormField.VALUE_NULLABLE;
 
 public class FormGroup extends FormData {
@@ -33,6 +34,10 @@ public class FormGroup extends FormData {
 
     public FormField addField(String key, String title, boolean value) {
         return addField(key, title, value, CLICKABLE_FIELD);
+    }
+
+    public FormField addField(String key, String title, Object value) {
+        return addField(key, title, value, CLICKABLE_NONE);
     }
 
     public FormField addField(String key, String title, Object value, int clickable) {
