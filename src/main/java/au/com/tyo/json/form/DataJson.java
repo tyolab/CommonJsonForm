@@ -19,6 +19,7 @@ package au.com.tyo.json.form;
 import com.google.api.client.json.GenericJson;
 import com.google.api.client.util.GenericData;
 
+import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
@@ -285,6 +286,8 @@ public class DataJson extends GenericJson {
         Object value = map.get(key);
         if (value instanceof Long)
             return (long) value;
+        else if (value instanceof BigDecimal)
+            return ((BigDecimal) value).longValue();
 
         return getInt(map, key, (int) alternative);
     }
