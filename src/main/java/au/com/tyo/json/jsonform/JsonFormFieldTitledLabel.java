@@ -19,4 +19,8 @@ public class JsonFormFieldTitledLabel extends JsonFormFieldLabel {
     public JsonFormFieldTitledLabel(String key, String title) {
         this(key, title, null);
     }
+
+    public JsonFormFieldTitledLabel(String key) {
+        super(key);
+    }
 }

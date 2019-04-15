@@ -11,6 +11,10 @@ public class JsonFormFieldWithTitle extends JsonFormFieldEditable {
     @Key
     public String title;
 
+    public JsonFormFieldWithTitle(String key) {
+        super(key);
+    }
+
     public JsonFormFieldWithTitle(String key, String title) {
         super(key);
         this.title = title;

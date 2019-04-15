@@ -15,10 +15,16 @@ public class JsonFormFieldLabel extends JsonFormField {
     @Key
     public String textStyle;
 
+    @Key
+    public boolean scrollable;
+
     public JsonFormFieldLabel(String key, String text) {
         super(key);
         this.text = text;
         this.required = VALUE_NULLABLE;
     }
 
+    public JsonFormFieldLabel(String key) {
+        this(key, null);
+    }
 }
