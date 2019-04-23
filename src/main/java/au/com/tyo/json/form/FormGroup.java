@@ -68,7 +68,7 @@ public class FormGroup extends FormData {
         jsonFormField.clickable = clickable;
         jsonFormField.required = required;
 
-        addField(key, title, jsonFormField, clickable);
+        addField(jsonFormField);
         return jsonFormField;
     }
 
