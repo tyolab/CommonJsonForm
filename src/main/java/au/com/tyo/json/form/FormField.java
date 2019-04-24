@@ -1,6 +1,7 @@
 package au.com.tyo.json.form;
 
 import au.com.tyo.json.Config;
+import au.com.tyo.json.jsonform.JsonFormField;
 
 public class FormField extends FormData implements FieldHeader, FieldValue {
 
@@ -136,6 +137,8 @@ public class FormField extends FormData implements FieldHeader, FieldValue {
     }
 
     public boolean hasSeparator() {
+        if (value instanceof JsonFormField)
+            return ((JsonFormField) value).separator_under;
         return withSeparator;
     }
 
