@@ -31,6 +31,7 @@ public class JsonFormField implements Comparable<JsonFormField> {
     public static final String ATTRIBUTE_NAME_SEPARATOR_UNDER = "separator_under";
 
     public static final String ATTRIBUTE_NAME_SCROLLABLE = "scrollable";
+    public static final String ATTRIBUTE_NAME_EXTERNAL_VALIDATOR = "has_validator";
 
     /**
      *

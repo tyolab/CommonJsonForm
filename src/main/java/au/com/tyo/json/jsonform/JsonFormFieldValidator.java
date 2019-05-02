@@ -29,8 +29,8 @@ public class JsonFormFieldValidator extends NameValuePair {
      *
      * @return
      */
-    public static JsonFormFieldValidator createNumericValidator() {
-        return new JsonFormFieldValidator("v_numeric", "true", "");  // Number only
+    public static JsonFormFieldValidator createNumericValidator(String error) {
+        return new JsonFormFieldValidator("v_numeric", "true", error);  // Number only
     }
 
     /**
@@ -38,13 +38,29 @@ public class JsonFormFieldValidator extends NameValuePair {
      *
      * @return
      */
-    public static JsonFormFieldValidator createRequiredValidator() {
-        return new JsonFormFieldValidator("v_required", "true", ""); // This field is required
+    public static JsonFormFieldValidator createRequiredValidator(String errorMessage) {
+        return new JsonFormFieldValidator("v_required", "true", errorMessage); // This field is required
     }
 
-//    public static JsonFormFieldValidator createAllCapsValidator() {
-//        return new JsonFormFieldValidator(V_ALLCAPS, "true");
-//    }
+    /**
+     *
+     * @param length
+     * @param errorMessage
+     * @return
+     */
+    public static JsonFormFieldValidator createMinimumLengthValidator(int length, String errorMessage) {
+        return new JsonFormFieldValidator("v_min_length", String.valueOf(length), errorMessage);
+    }
+
+    /**
+     *
+     * @param length
+     * @param errorMessage
+     * @return
+     */
+    public static JsonFormFieldValidator createMaximumLengthValidator(int length, String errorMessage) {
+        return new JsonFormFieldValidator("v_max_length", String.valueOf(length), errorMessage);
+    }
 
     @Override
     public int hashCode() {

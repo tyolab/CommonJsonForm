@@ -23,6 +23,9 @@ public class JsonFormFieldEditText extends JsonFormFieldWithTitleAndHint {
     @Key
     public int minLength = -1;
 
+    @Key
+    public boolean has_validator;
+
     public JsonFormFieldEditText(String key, String title, String hint) {
         super(key, title, hint);
     }
