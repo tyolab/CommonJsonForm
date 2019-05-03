@@ -32,7 +32,7 @@ public class JsonFormFieldEditText extends JsonFormFieldWithTitleAndHint {
 
     public JsonFormFieldEditText(String key, String title) {
         this(key, title, REQUIRED);
-        addRequiredValidator();
+        addRequiredValidator("Cannot be empty");
     }
 
     public void addValidator(JsonFormFieldValidator validator) {
@@ -46,16 +46,16 @@ public class JsonFormFieldEditText extends JsonFormFieldWithTitleAndHint {
         validators.add(validator);
     }
 
-    public void addRequiredValidator() {
-        addValidator(JsonFormFieldValidator.createRequiredValidator());
+    public void addRequiredValidator(String errorMessage) {
+        addValidator(JsonFormFieldValidator.createRequiredValidator(errorMessage));
     }
 
     public void addAllCapsFilter() {
         addFilter(JsonFormFieldFilter.createAllCapsFilter());
     }
 
-    public void addNumericValidator() {
-        addValidator(JsonFormFieldValidator.createNumericValidator());
+    public void addNumericValidator(String errorMessage) {
+        addValidator(JsonFormFieldValidator.createNumericValidator(errorMessage));
     }
 
     public void addNumericFilter() {
