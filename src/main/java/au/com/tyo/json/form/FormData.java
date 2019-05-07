@@ -42,6 +42,10 @@ class FormData extends OrderedDataMap {
         return getBoolean(KEY_EDITABLE, true);
     }
 
+    public boolean isEditableValueSet() {
+        return containsKey(KEY_EDITABLE);
+    }
+
     public void setLocked(boolean editable) {
         set(KEY_LOCKED, editable);
     }
