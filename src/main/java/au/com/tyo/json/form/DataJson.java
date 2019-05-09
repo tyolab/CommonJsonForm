@@ -253,7 +253,7 @@ public class DataJson extends GenericJson {
         Object value = map.get(key);
         if (value instanceof Long) {
             try {
-                return (int) value;
+                return ((Long) value).intValue();
             } catch (Exception ex) {
                 ex.printStackTrace();
             }
@@ -267,7 +267,7 @@ public class DataJson extends GenericJson {
         }
         else if (value instanceof Double) {
             try {
-                return (int) getDouble(map, key);
+                return ((Double) value).intValue();
             }
             catch (Exception e1) {
                 e1.printStackTrace();
