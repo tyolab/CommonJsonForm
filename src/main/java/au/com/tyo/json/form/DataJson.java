@@ -251,7 +251,14 @@ public class DataJson extends GenericJson {
 
     public static int getInt(Map map, String key, int alternative) {
         Object value = map.get(key);
-        if (value instanceof Integer) {
+        if (value instanceof Long) {
+            try {
+                return (int) value;
+            } catch (Exception ex) {
+                ex.printStackTrace();
+            }
+        }
+        else if (value instanceof Integer) {
             try {
                 return (int) value;
             } catch (Exception ex) {
