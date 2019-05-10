@@ -100,7 +100,7 @@ public class OrderedDataMap<ValueType, ContainerType extends List<ValueType>> ex
 
     public void removeOldest() {
         synchronized (this) {
-            if (orderedKeys.size() == 0)
+            if (null == orderedKeys || orderedKeys.size() == 0)
                 return;
             String ketStr = orderedKeys.get(0);
             remove(ketStr);
@@ -118,7 +118,7 @@ public class OrderedDataMap<ValueType, ContainerType extends List<ValueType>> ex
     }
 
     public ValueType peekOldest() {
-        if (values.size() == 0)
+        if (null == values || values.size() == 0)
             return null;
 
         ValueType value = values.get(0);
