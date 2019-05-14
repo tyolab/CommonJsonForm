@@ -26,6 +26,7 @@ public interface FormState {
 
     FormState.State getFormState();
 
-    enum State {NONE, NEW, UPDATED, DELETED, VIEWING, UPDATING, AUTO_FILLED};
+    // NONA == NONE
+    enum State {NONA, NEW, UPDATED, DELETED, VIEWING, UPDATING, AUTO_FILLED};
 
 }
