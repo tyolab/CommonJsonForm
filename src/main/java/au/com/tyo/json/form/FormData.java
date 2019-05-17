@@ -16,6 +16,8 @@ class FormData extends OrderedDataMap {
 
     public static final String KEY_LAYOUT_TITLE = "$layout_title";
 
+    public static final String KEY_VISIBLE = "$visible";
+
     private boolean showingTitle = false;
 
     public boolean isShowingTitle() {
@@ -88,5 +90,13 @@ class FormData extends OrderedDataMap {
 
     public boolean hasKey() {
         return containsKey(KEY_KEY);
+    }
+
+    public void setVisible(boolean editable) {
+        set(KEY_VISIBLE, editable);
+    }
+
+    public boolean isVisible() {
+        return getBoolean(KEY_VISIBLE, true);
     }
 }
