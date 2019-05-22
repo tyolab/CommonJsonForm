@@ -2,6 +2,8 @@ package au.com.tyo.json.form;
 
 import au.com.tyo.json.util.OrderedDataMap;
 
+import static au.com.tyo.json.jsonform.JsonFormField.CLICKABLE_NONE;
+
 class FormData extends OrderedDataMap {
 
     public static final String KEY_EDITABLE = "$editable";
@@ -17,6 +19,8 @@ class FormData extends OrderedDataMap {
     public static final String KEY_LAYOUT_TITLE = "$layout_title";
 
     public static final String KEY_VISIBLE = "$visible";
+
+    public static final String KEY_CLICKABLE = "$clickable";
 
     private boolean showingTitle = false;
 
@@ -98,5 +102,13 @@ class FormData extends OrderedDataMap {
 
     public boolean isVisible() {
         return getBoolean(KEY_VISIBLE, true);
+    }
+
+    public void setClickable(int clickable) {
+        put(KEY_CLICKABLE, clickable);
+    }
+
+    public int getClickable() {
+        return getInt(KEY_CLICKABLE, CLICKABLE_NONE);
     }
 }

@@ -20,6 +20,9 @@ public class JsonFormGroup {
     @Key
     public boolean titleVisible ;
 
+    @Key
+    public int clickable;
+
     public JsonFormGroup(String title) {
         this.title = title;
     }
