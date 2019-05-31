@@ -22,6 +22,8 @@ class FormData extends OrderedDataMap {
 
     public static final String KEY_CLICKABLE = "$clickable";
 
+    public static final String KEY_ORIENTATION = "$orientation";
+
     private boolean showingTitle = false;
 
     public boolean isShowingTitle() {
@@ -110,5 +112,13 @@ class FormData extends OrderedDataMap {
 
     public int getClickable() {
         return getInt(KEY_CLICKABLE, CLICKABLE_NONE);
+    }
+
+    public void setOrientation(String value) {
+        set(KEY_ORIENTATION, value);
+    }
+
+    public String getOrientation() {
+        return getString(KEY_ORIENTATION);
     }
 }
