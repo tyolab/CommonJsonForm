@@ -8,9 +8,6 @@ import com.google.api.client.util.Key;
 
 public class JsonFormFieldTitledLabel extends JsonFormFieldLabel {
 
-    @Key
-    public String title;
-
     public JsonFormFieldTitledLabel(String key, String title, String text) {
         super(key, text);
         this.title = title;

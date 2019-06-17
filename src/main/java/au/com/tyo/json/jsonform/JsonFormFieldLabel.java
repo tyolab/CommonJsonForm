@@ -6,7 +6,7 @@ import com.google.api.client.util.Key;
  * Created by Eric Tang (eric.tang@tyo.com.au) on 27/7/17.
  */
 
-public class JsonFormFieldLabel extends JsonFormField {
+public class JsonFormFieldLabel extends JsonFormFieldWithTitle {
 
     @Key
     @Deprecated
@@ -22,6 +22,7 @@ public class JsonFormFieldLabel extends JsonFormField {
         super(key);
         this.text = text;
         this.required = VALUE_NULLABLE;
+        this.editable = false;
     }
 
     public JsonFormFieldLabel(String key) {

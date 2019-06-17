@@ -27,6 +27,7 @@ public class JsonFormField implements Comparable<JsonFormField> {
     public static final String ATTRIBUTE_NAME_ENABLED = "enabled";
     public static final String ATTRIBUTE_NAME_KEY = "key";
     public static final String ATTRIBUTE_NAME_TITLE = "title";
+    public static final String ATTRIBUTE_NAME_SUB_TITLE = "subtitle";
     public static final String ATTRIBUTE_NAME_TYPE = "type";
     public static final String ATTRIBUTE_NAME_SEPARATOR_UNDER = "separator_under";
 

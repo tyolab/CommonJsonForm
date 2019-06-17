@@ -24,6 +24,8 @@ public class FormField extends FormData implements FieldHeader, FieldValue {
 
     private boolean withSeparator;
 
+    private String subtitle;
+
     public FormField(String key, String title, Object value) {
         setKey(key);
         setTitle(title);
@@ -146,4 +148,11 @@ public class FormField extends FormData implements FieldHeader, FieldValue {
         this.withSeparator = withSparator;
     }
 
+    public String getSubtitle() {
+        return subtitle;
+    }
+
+    public void setSubtitle(String subtitle) {
+        this.subtitle = subtitle;
+    }
 }
