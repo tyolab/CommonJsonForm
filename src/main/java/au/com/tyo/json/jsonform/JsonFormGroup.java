@@ -23,6 +23,12 @@ public class JsonFormGroup {
     @Key
     public int clickable;
 
+    /**
+     * Fields directly showed in form
+     */
+    @Key
+    public List<JsonFormField> fields;
+
     public JsonFormGroup(String title) {
         this.title = title;
     }
@@ -46,9 +52,5 @@ public class JsonFormGroup {
     public void sort() {
         Collections.sort(fields);
     }
-    /**
-     * Fields directly showed in form
-     */
-    @Key
-    public List<JsonFormField> fields;
+
 }

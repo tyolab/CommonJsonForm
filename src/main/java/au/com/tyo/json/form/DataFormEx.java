@@ -36,6 +36,11 @@ public class DataFormEx extends FormGroup {
     /**
      *
      */
+    public static final String KEY_FIELDS = "$fields";
+
+    /**
+     *
+     */
     public static final String KEY_META_MAP = "$meta";
 
     /**
@@ -90,6 +95,13 @@ public class DataFormEx extends FormGroup {
 
         if (null != formData)
             absorbData(group);
+    }
+
+    public void addField(Map fields) {
+        addListData(KEY_FIELDS, fields);
+
+        if (null != formData)
+            absorbData(fields);
     }
 
     /**
@@ -223,4 +235,7 @@ public class DataFormEx extends FormGroup {
         this.formData = formData;
     }
 
+    public List getFields() {
+        return getListData(KEY_FIELDS);
+    }
 }
