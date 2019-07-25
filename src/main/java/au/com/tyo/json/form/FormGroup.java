@@ -72,12 +72,12 @@ public class FormGroup extends FormData {
         return jsonFormField;
     }
 
-    public void addField(JsonFormFieldWithTitle jsonFormField) {
-        addField(jsonFormField.key, jsonFormField.title, jsonFormField, jsonFormField.clickable);
+    public FormField addField(JsonFormFieldWithTitle jsonFormField) {
+        return addField(jsonFormField.key, jsonFormField.title, jsonFormField, jsonFormField.clickable);
     }
 
-    public void addField(JsonFormField jsonFormField) {
-        addField(jsonFormField.key, FormField.toTitle(jsonFormField.key), jsonFormField, jsonFormField.clickable);
+    public FormField addField(JsonFormField jsonFormField) {
+        return addField(jsonFormField.key, FormField.toTitle(jsonFormField.key), jsonFormField, jsonFormField.clickable);
     }
 
 }

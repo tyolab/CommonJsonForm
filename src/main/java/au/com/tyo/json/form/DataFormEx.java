@@ -9,7 +9,7 @@ import au.com.tyo.json.util.OrderedDataMap;
 
 public class DataFormEx extends FormGroup {
 
-    public static final String ABSORB_DATA_PREFIX_DEFAULT = "settings_key";
+    public static final String ABSORB_DATA_PREFIX_DEFAULT = "$form_data";
 
     public static String absorbDataPrefix = ABSORB_DATA_PREFIX_DEFAULT;
 
@@ -97,11 +97,16 @@ public class DataFormEx extends FormGroup {
             absorbData(group);
     }
 
-    public void addField(Map fields) {
-        addListData(KEY_FIELDS, fields);
+    public void addFields(Map<? extends String, ?> fields) {
+        List list = getListData(KEY_FIELDS);
 
+        for (Map.Entry<? extends String, ?> entry : fields.entrySet())
+            addField(entry.getKey(), entry.getValue());
+    }
+
+    public void addData(Map data) {
         if (null != formData)
-            absorbData(fields);
+            absorbData(data);
     }
 
     /**
@@ -155,6 +160,19 @@ public class DataFormEx extends FormGroup {
                     absorbData(entry);
             }
         }
+    }
+
+    public FormField addField(String key, String title, Object value, int clickable) {
+        FormField formField = super.addField(key, title, value, clickable);
+
+        return addField(formField);
+    }
+
+    public FormField addField(FormField formField) {
+        List fields = getListData(KEY_FIELDS);
+        fields.add(formField);
+
+        return formField;
     }
 
     public List getGroups() {
@@ -238,4 +256,5 @@ public class DataFormEx extends FormGroup {
     public List getFields() {
         return getListData(KEY_FIELDS);
     }
+
 }
