@@ -4,6 +4,8 @@ import com.google.api.client.util.Key;
 
 import au.com.tyo.json.form.FormState;
 
+import static au.com.tyo.json.form.FormState.State.NONA;
+
 /**
  * Created by Eric Tang (eric.tang@tyo.com.au) on 17/7/17.
  */
@@ -43,7 +45,7 @@ public class JsonForm extends JsonBase implements FormState {
     @Key
     public String id;
 
-    private FormState.State formState;
+    private FormState.State formState = NONA;
 
     public JsonForm(String title) {
         super();
