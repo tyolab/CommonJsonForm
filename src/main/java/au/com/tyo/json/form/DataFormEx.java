@@ -179,6 +179,10 @@ public class DataFormEx extends FormGroup {
         return formField;
     }
 
+    public void clearFields() {
+        getListData(KEY_FIELDS).clear();
+    }
+
     public List getGroups() {
         return getListData(KEY_GROUPS);
     }
