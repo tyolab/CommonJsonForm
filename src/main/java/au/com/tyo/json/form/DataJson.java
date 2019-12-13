@@ -58,26 +58,30 @@ public class DataJson extends GenericJson {
     }
 
     public double getDoubleFromString(String key) {
-        return getDoubleFromString(this, key);
+        return getDoubleFromString(this, key, 0.0d);
     }
 
-    public static double getDoubleFromString(Map map, String key) {
+    public double getDoubleFromString(String key, double alternative) {
+        return getDoubleFromString(this, key, alternative);
+    }
+
+    public static double getDoubleFromString(Map map, String key, double alternative) {
         Object v = map.get(key);
-        double value = 0f;
-        if (v instanceof Double || v instanceof Float || v instanceof Integer) {
-            try {
-                value = (double) v;
-            } catch (Exception ex) {
-                ex.printStackTrace();
-            }
+        double value = alternative;
+        if (map.containsKey(key)) {
+            if (v instanceof Double || v instanceof Float || v instanceof Integer) {
+                try {
+                    value = (double) v;
+                } catch (Exception ex) {
+                    ex.printStackTrace();
+                }
+            } else if (v instanceof String)
+                try {
+                    value = Double.parseDouble((String) v);
+                } catch (Exception ex) {
+                    ex.printStackTrace();
+                }
         }
-        else if (v instanceof String)
-            try {
-                value = Double.parseDouble((String) v);
-            }
-            catch (Exception ex) {
-                ex.printStackTrace();
-            }
         return value;
     }
 
@@ -157,18 +161,28 @@ public class DataJson extends GenericJson {
     }
 
     public double getDouble(String key) {
-        return getDouble(this, key);
+        return getDouble(this, key, 0.0d);
     }
 
-    public static double getDouble(Map map, String key) {
-        try {
-            Double d = (Double) map.get(key);
-            return d;
+    public double getDouble(String key, double alternative) {
+        return getDouble(this, key, alternative);
+    }
+
+    public static double getDouble(Map map, String key, double alternative) {
+        if (map.containsKey(key)) {
+            Double d = alternative;
+            Object obj = map.get(key);
+            if (obj instanceof Double)
+                try {
+                     d = (Double) obj;
+                    return d;
+                } catch (Exception ex) {
+                    ex.printStackTrace();
+                }
+            else if (obj instanceof String)
+                return Double.parseDouble((String) obj);
         }
-        catch (Exception ex) {
-            ex.printStackTrace();
-        }
-        return 0;
+        return alternative;
     }
 
     public float getFloat(String key) {
@@ -275,7 +289,7 @@ public class DataJson extends GenericJson {
         }
         else if (value instanceof String) {
             try {
-                return (int) getDoubleFromString(map, key);
+                return (int) getDoubleFromString(map, key, alternative);
             }
             catch (Exception e2) {
                 e2.printStackTrace();

@@ -162,6 +162,10 @@ public class DataFormEx extends FormGroup {
         }
     }
 
+    public boolean hasData() {
+        return getFields().size() > 0;
+    }
+
     public FormField addField(String key, String title, Object value, int clickable) {
         FormField formField = super.addField(key, title, value, clickable);
 
