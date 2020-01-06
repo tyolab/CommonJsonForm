@@ -187,8 +187,9 @@ public class DataFormEx extends FormGroup {
         return getListData(KEY_GROUPS);
     }
 
-    public void setTitle(String title) {
+    public FormField setTitle(String title) {
         set(KEY_TITLE, title);
+        return null;
     }
 
     public String getTitle() {

@@ -39,30 +39,38 @@ public class FormField extends FormData implements FieldHeader, FieldValue {
         return title;
     }
 
-    public void setTitle(String title) {
+    public FormField setTitle(String title) {
         this.title = title;
+
+        return this;
     }
 
-    public void setKey(String key) {
+    public FormField setKey(String key) {
         //set(KEY_KEY, key);
         this.key = key;
+
+        return this;
     }
 
     public String getKey() {
         return key; //getString(KEY_KEY);
     }
 
-    public void setValue(Object value) {
+    public FormField setValue(Object value) {
         //set(KEY_VALUE, value);
         this.value = value;
+
+        return this;
     }
 
     public Object getValue() {
         return value; // get(KEY_VALUE);
     }
 
-    public void setType(String type) {
+    public FormField setType(String type) {
         this.type = type;
+
+        return this;
     }
 
     /**
@@ -118,12 +126,16 @@ public class FormField extends FormData implements FieldHeader, FieldValue {
         return clickable;
     }
 
-    public void setClickable(int clickable) {
+    public FormField setClickable(int clickable) {
         this.clickable = clickable;
+
+        return this;
     }
 
-    public void setEnabled(boolean enabled) {
+    public FormField setEnabled(boolean enabled) {
         this.enabled = enabled;
+
+        return this;
     }
 
     public boolean isEnabled() {
@@ -134,8 +146,10 @@ public class FormField extends FormData implements FieldHeader, FieldValue {
         return layout;
     }
 
-    public void setLayout(int layout) {
+    public FormField setLayout(int layout) {
         this.layout = layout;
+
+        return this;
     }
 
     public boolean hasSeparator() {
@@ -144,15 +158,19 @@ public class FormField extends FormData implements FieldHeader, FieldValue {
         return withSeparator;
     }
 
-    public void setWithSeparator(boolean withSparator) {
+    public FormField setWithSeparator(boolean withSparator) {
         this.withSeparator = withSparator;
+
+        return this;
     }
 
     public String getSubtitle() {
         return subtitle;
     }
 
-    public void setSubtitle(String subtitle) {
+    public FormField setSubtitle(String subtitle) {
         this.subtitle = subtitle;
+
+        return this;
     }
 }

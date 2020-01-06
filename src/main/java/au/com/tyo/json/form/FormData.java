@@ -34,8 +34,9 @@ class FormData extends OrderedDataMap {
         this.showingTitle = showingTitle;
     }
 
-    public void setTitle(String title) {
+    public FormField setTitle(String title) {
         set(KEY_TITLE, title);
+        return null;
     }
 
     public String getTitle() {
@@ -62,8 +63,9 @@ class FormData extends OrderedDataMap {
         return getBoolean(KEY_LOCKED, false);
     }
 
-    public void setLayout(int layout) {
+    public FormField setLayout(int layout) {
         put(KEY_LAYOUT, layout);
+        return null;
     }
 
     public int getLayout() {
@@ -86,8 +88,9 @@ class FormData extends OrderedDataMap {
         return containsKey(KEY_LAYOUT_TITLE);
     }
 
-    public void setKey(String keyStr) {
+    public FormField setKey(String keyStr) {
         set(KEY_KEY, keyStr);
+        return null;
     }
 
     public String getKey() {
@@ -106,8 +109,9 @@ class FormData extends OrderedDataMap {
         return getBoolean(KEY_VISIBLE, true);
     }
 
-    public void setClickable(int clickable) {
+    public FormField setClickable(int clickable) {
         put(KEY_CLICKABLE, clickable);
+        return null;
     }
 
     public int getClickable() {
