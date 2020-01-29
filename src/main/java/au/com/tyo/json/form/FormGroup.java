@@ -25,12 +25,21 @@ public class FormGroup extends FormData {
     }
 
     public FormField addField(String title, Object value) {
-        return addField(title, value, 0);
+        return addField(FormField.toKey(title), title, value, CLICKABLE_NONE);
     }
 
-    public FormField addField(String title, Object value, int clickable) {
-        return addField(FormField.toKey(title), title, value, clickable);
-    }
+    /**
+     *
+     * Not to use this method, as it may cause confusion with key, title
+     *
+     * @param key
+     * @param title
+     * @param value
+     * @return
+     */
+    // public FormField addField(String title, Object value, int clickable) {
+    //     return addField(FormField.toKey(title), title, value, clickable);
+    // }
 
     public FormField addField(String key, String title, boolean value) {
         return addField(key, title, value, CLICKABLE_FIELD);
@@ -78,6 +87,11 @@ public class FormGroup extends FormData {
 
     public FormField addField(JsonFormField jsonFormField) {
         return addField(jsonFormField.key, FormField.toTitle(jsonFormField.key), jsonFormField, jsonFormField.clickable);
+    }
+
+    public FormField addField(FormField formField) {
+        putInOrder(formField.getKey(), formField);
+        return formField;
     }
 
 }

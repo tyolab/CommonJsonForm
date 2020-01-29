@@ -90,6 +90,15 @@ public class DataFormEx extends FormGroup {
         set(KEY_FOOTER, footerResId);
     }
 
+    public FormGroup addGroup(FormGroup group) {
+        addListData(KEY_GROUPS, group);
+
+        if (null != formData)
+            absorbData(group);
+
+        return group;
+    }
+
     public void addGroup(Map group) {
         addListData(KEY_GROUPS, group);
 
@@ -179,8 +188,17 @@ public class DataFormEx extends FormGroup {
         return formField;
     }
 
+    public void clear() {
+        clearFields();
+        clearGroups();
+    }
+
     public void clearFields() {
         getListData(KEY_FIELDS).clear();
+    }
+
+    public void clearGroups() {
+        getListData(KEY_GROUPS).clear();
     }
 
     public List getGroups() {
