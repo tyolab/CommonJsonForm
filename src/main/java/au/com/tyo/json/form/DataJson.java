@@ -202,9 +202,12 @@ public class DataJson extends GenericJson {
         return null;
     }
 
-    protected void addListData(String name, Object data) {
+    protected void addListData(String name, Object data, boolean top) {
         List list = getListData(name);
-        list.add(data);
+        if (top)
+            list.add(0, data);
+        else
+            list.add(data);
     }
 
     protected List getListData(String name) {

@@ -1,6 +1,7 @@
 package au.com.tyo.json.form;
 
 import java.util.Collection;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -91,7 +92,17 @@ public class DataFormEx extends FormGroup {
     }
 
     public FormGroup addGroup(FormGroup group) {
-        addListData(KEY_GROUPS, group);
+        return addGroup(group, false);
+    }
+
+    /**
+     *
+     * @param group
+     * @param top Whether add to the top of the list
+     * @return
+     */
+    public FormGroup addGroup(FormGroup group, boolean top) {
+        addListData(KEY_GROUPS, group, top);
 
         if (null != formData)
             absorbData(group);
@@ -100,7 +111,11 @@ public class DataFormEx extends FormGroup {
     }
 
     public void addGroup(Map group) {
-        addListData(KEY_GROUPS, group);
+        addGroup(group, false);
+    }
+
+    public void addGroup(Map group, boolean top) {
+        addListData(KEY_GROUPS, group, top);
 
         if (null != formData)
             absorbData(group);
@@ -169,6 +184,10 @@ public class DataFormEx extends FormGroup {
                     absorbData(entry);
             }
         }
+    }
+
+    public Object getFieldValue(String key) {
+        return formData.get(key);
     }
 
     public boolean hasData() {
@@ -282,6 +301,10 @@ public class DataFormEx extends FormGroup {
 
     public List getFields() {
         return getListData(KEY_FIELDS);
+    }
+
+    public void createFormData() {
+        formData = new HashMap<String, Object>();
     }
 
 }

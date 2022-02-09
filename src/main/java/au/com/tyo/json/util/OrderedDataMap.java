@@ -1,5 +1,7 @@
 package au.com.tyo.json.util;
 
+import static au.com.tyo.json.form.DataFormEx.ABSORB_DATA_PREFIX_DEFAULT;
+
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
@@ -28,7 +30,7 @@ public class OrderedDataMap<ValueType, ContainerType extends List<ValueType>> ex
      */
     public void putInOrder(String key, ValueType value) {
 
-        if (null != key && key.charAt(0) != '$') {
+        if (null != key && (key.charAt(0) != '$' || key.startsWith(ABSORB_DATA_PREFIX_DEFAULT))) {
             if (null == orderedKeys)
                 orderedKeys = new ArrayList<>();
 
