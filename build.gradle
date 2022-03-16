@@ -9,9 +9,15 @@ dependencies {
 
     // compile files('libs/json-java-android.jar')
 
-    implementation 'com.google.code.gson:gson:2.8.6'
+    implementation ('com.google.code.gson:gson:2.8.6') {
+        exclude module: 'httpclient'
+        exclude group: 'org.apache.httpcomponents'
+    }
 
-    implementation 'com.google.http-client:google-http-client:1.36.0'
+    implementation ('com.google.http-client:google-http-client:1.36.0') {
+        exclude module: 'httpclient'
+        exclude group: 'org.apache.httpcomponents'
+    }
 }
 
 repositories {
